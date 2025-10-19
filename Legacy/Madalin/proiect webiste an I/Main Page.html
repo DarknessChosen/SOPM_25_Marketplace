@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<style>
+    .p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 0;
+        border-style: solid;
+        border-color: red;
+        border-bottom-width: 3px;
+        background-color: black;
+        height: 95px;
+    }
+    .lp{
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .albums{
+    font-family: Verdana;
+    font-size: 19px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .albums:hover{
+    color: rgb(122, 0, 0);
+    }
+    .dropdb{
+        transition: 0.3s;
+    }
+    .dropdb:hover{
+        transform: rotate(-180deg);
+    }
+    .albums:active{
+    color:white;
+    }
+    .features{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .features:hover{
+        color: rgb(122, 0, 0);
+    }
+    .features:active{
+        color: white;
+    }
+    .mp{
+        width: 450px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+    }
+    .logo{
+        width: 400px;
+        margin-top: 8px;
+        border-color: red;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 6;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 20px;
+        transition: 0.15s;
+    }
+    .logo:hover{
+        opacity: 0.7;
+    }
+    .logo:active{
+        opacity: 0.4;
+    }
+    .el{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    min-width: 124px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .el:hover{
+        color: rgb(122, 0, 0);
+    }
+    .el:active{
+        color:white;
+    }
+    .links{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 20px;
+    transition: 0.3s;
+    }
+    .links:hover{
+        color: rgb(122, 0, 0);
+    }
+    .links:active{
+        color:white;
+    }
+    .rp{
+        flex: 1;
+        display: flex;
+    }
+    .sb{
+        flex: 1;
+        height: 29,5px;
+        border-style: solid;
+        background-color: black;
+        color: red;
+        border-color: red;
+        font-family: Arial;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        box-shadow: inset 1px, 2px, 3px rgb(255, 255, 255);
+        min-width: 10px;
+        margin-left: 20px;
+        width: 0;
+    }
+    .sb::placeholder{
+        font-family: Arial;
+        margin-left: 5px;
+        padding-left: 10px;
+    }
+    .xo{
+        width: 36px;
+        height: 36px;
+        border-style: solid;
+        border-color: red;
+        margin-left: -2px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-right: 60px;
+        background-color: black;
+    }
+    .xo-img{
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        margin-right: 60px;
+        transition: 0.15s;
+    }
+    .xo-img:hover{
+        opacity: 0.7;
+    }
+    .xo-img:active{
+        opacity: 0.4
+    }
+    .lpa{
+        position: relative;
+        display: inline-block;
+    }
+    .albums-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .albums-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .albums-content a:hover{
+        opacity: 0.8;
+    }
+    .lpa:hover .albums-content {display: block;}
+    .lpf{
+        position: relative;
+        display: inline-block;
+    }
+    .lpf:hover .features-content {display: block;}
+    .features-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .features-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .features-content a:hover{
+        opacity: 0.8;
+    }
+    .lpl{
+        position: relative;
+        display: inline-block;
+    }
+    .lpl:hover .links-content {display: block;}
+    .links-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .links-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .links-content a:hover{
+        opacity: 0.8;
+    }
+    .tw{
+        width: 100%;
+        background-color: red;
+    }
+    .mainpage{
+        animation-name: example;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+    }
+    @keyframes example{
+        0% {background-image: url(images/trilogybg.png);}
+        10% {background-image: url(images/trilogybg.png);}
+        15% {background-image: url(images/kisslandbg.png);}
+        25% {background-image: url(images/kisslandbg.png);}
+        30% {background-image: url(images/bbtmbg.png);}
+        40% {background-image: url(images/bbtmbg.png);}
+        45% {background-image: url(images/sbbg.png);}
+        55% {background-image: url(images/sbbg.png);}
+        60% {background-image: url(images/mdmbg.png);}
+        70% {background-image: url(images/mdmbg.png);}
+        75% {background-image: url(images/ahbg.png);}
+        85% {background-image: url(images/ahbg.png);}
+        90% {background-image: url(images/dawnbg.png);}
+        100% {background-image: url(images/dawnbg.png);}
+    }
+    .trl{
+        height: 300px;
+        z-index: 0;
+    }
+    .kl{
+        width:0;
+    }
+    .dropdb{
+        align-items: center;
+        width: 20px;
+    }
+    .welcome{
+        font-family: Arial;
+        padding: 0;
+        padding-top: 100px;
+        margin-left: 25%;
+        color: red;
+        font-size: 50px;
+        animation-name: lift;
+        animation-duration: 3s;
+        font-weight: bold;
+    }
+    @keyframes lift{
+        0%{
+            opacity: 0;
+            padding-top: 600px;
+        }
+        25%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        80%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        100%{
+            opacity: 1;
+            padding-top: 100px;
+        }
+    }
+    .text{
+        color: white;
+        font-size: 170%;
+        text-align: center;
+        line-height: 55px;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
+        padding-top: 100px;
+        border: 0;
+        font-weight: bold;
+    }
+    @keyframes hov{
+        0%{
+            opacity: 0;
+            font-size: 1px;
+            line-height: 1px;
+        }
+        82%{
+            opacity: 0;
+            font-size: 30px;
+            line-height: 55px;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+<html>
+    <head>
+        <title>The Weeknd Database</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="p">
+        <div class="header">
+            <div class="lp">
+                <div class="lpa">
+                    <a href="albums.html"><button class="albums"> Albums<img class="dropdb" src="images/ddbr.png"></button></a>
+                    <div class="albums-content">
+                        <a href="#">The Noise</a>
+                        <a href="#">Trilogy</a>
+                        <a href="#">Kiss Land</a>
+                        <a href="#">Beauty Behind the Madness</a>
+                        <a href="#">Starboy</a>
+                        <a href="#">My Dear Melancholy</a>
+                        <a href="#">After Hours</a>
+                        <a href="#">Dawn FM</a>
+                    </div>
+                </div>
+                <div class="lpf">
+                    <a href="features.html"><button class="features"> Features<img class="dropdb" src="images/ddbr.png"></button></a>
+                    <div class="features-content">
+                        <a href="#">Trilogy</a>
+                        <a href="#">Kiss Land</a>
+                        <a href="#">Beauty Behind the Madness</a>
+                        <a href="#">Starboy</a>
+                        <a href="#">My Dear Melancholy</a>
+                        <a href="#">After Hours</a>
+                        <a href="#">Dawn FM</a>
+                    </div>
+                </div>
+                <a href="Early-Life.html"><button class="el"> Early life</button></a>
+                <div class="lpl">
+                <button class="links"> Links<img class="dropdb" src="images/ddbr.png"></button>
+                    <div class="links-content">
+                        <a href="https://www.facebook.com/theweeknd" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/theweeknd/" target="_blank">Instagram</a>
+                        <a href="https://soundcloud.com/theweeknd" target="_blank">Soundcloud</a>
+                        <a href="https://itunes.apple.com/us/artist/the-weeknd/479756766" target="_blank">Apple Music</a>
+                        <a href="https://music.apple.com/us/artist/the-weeknd/479756766" target="_blank">Spotify</a>
+                        <a href="https://twitter.com/TheWeeknd" target="_blank">Twitter</a>
+                        <a href="https://www.youtube.com/user/TheWeekndVEVO" target="_blank">Youtube</a>
+                        <a href="https://www.theweeknd.com/" target="_blank">Official Website</a>
+                        <a href="https://shop.theweeknd.com/" target="_blank">Shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mp">
+                <a href="Main Page.html"><img class="logo" src="images/logo.png"></a>
+            </div>
+            <div class="rp">
+                <input class="sb" type="text" placeholder="Search">
+                <button class="xo">
+                    <img class="xo-img" src="images/XO.png">
+                </button>
+            </div>
+        </div>
+        <div class="mainpage">
+            <div class="welcome">Welcome to The Weeknd Database</div>
+            <div class="text">"Abel Makkonen Tesfaye (born February 16, 1990), known professionally as the Weeknd, is a Canadian<br>
+                singer, songwriter, and record producer. Known for his sonic versatility and dark lyricism,<br>
+                his music explores escapism, romance, and melancholia, and is often inspired by personal experiences.<br>
+                He has received numerous accolades, including four Grammy Awards, a Latin Grammy Award,<br>
+                20 Billboard Music Awards, 17 Juno Awards, six American Music Awards, two MTV Video Music Awards,<br> and nominations
+                for an Academy Award and a Primetime Emmy Award."<br>
+                - Wikipedia
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<style>
+    .p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 0;
+        border-style: solid;
+        border-color: red;
+        border-bottom-width: 3px;
+        background-color: black;
+        height: 95px;
+    }
+    .lp{
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .albums{
+    font-family: Verdana;
+    font-size: 19px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .albums:hover{
+    color: rgb(122, 0, 0);
+    }
+    .dropdb{
+        transition: 0.3s;
+    }
+    .dropdb:hover{
+        transform: rotate(-180deg);
+    }
+    .albums:active{
+    color:white;
+    }
+    .features{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .features:hover{
+        color: rgb(122, 0, 0);
+    }
+    .features:active{
+        color: white;
+    }
+    .mp{
+        width: 450px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+    }
+    .logo{
+        width: 400px;
+        margin-top: 8px;
+        border-color: red;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 6;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 20px;
+        transition: 0.15s;
+    }
+    .logo:hover{
+        opacity: 0.7;
+    }
+    .logo:active{
+        opacity: 0.4;
+    }
+    .el{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    min-width: 124px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .el:hover{
+        color: rgb(122, 0, 0);
+    }
+    .el:active{
+        color:white;
+    }
+    .links{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 20px;
+    transition: 0.3s;
+    }
+    .links:hover{
+        color: rgb(122, 0, 0);
+    }
+    .links:active{
+        color:white;
+    }
+    .rp{
+        flex: 1;
+        display: flex;
+    }
+    .sb{
+        flex: 1;
+        height: 29,5px;
+        border-style: solid;
+        background-color: black;
+        color: red;
+        border-color: red;
+        font-family: Arial;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        box-shadow: inset 1px, 2px, 3px rgb(255, 255, 255);
+        min-width: 10px;
+        margin-left: 20px;
+        width: 0;
+    }
+    .sb::placeholder{
+        font-family: Arial;
+        margin-left: 5px;
+        padding-left: 10px;
+    }
+    .xo{
+        width: 36px;
+        height: 36px;
+        border-style: solid;
+        border-color: red;
+        margin-left: -2px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-right: 60px;
+        background-color: black;
+    }
+    .xo-img{
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        margin-right: 60px;
+        transition: 0.15s;
+    }
+    .xo-img:hover{
+        opacity: 0.7;
+    }
+    .xo-img:active{
+        opacity: 0.4
+    }
+    .lpa{
+        position: relative;
+        display: inline-block;
+    }
+    .albums-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .albums-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .albums-content a:hover{
+        opacity: 0.8;
+    }
+    .lpa:hover .albums-content {display: block;}
+    .lpf{
+        position: relative;
+        display: inline-block;
+    }
+    .lpf:hover .features-content {display: block;}
+    .features-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .features-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .features-content a:hover{
+        opacity: 0.8;
+    }
+    .lpl{
+        position: relative;
+        display: inline-block;
+    }
+    .lpl:hover .links-content {display: block;}
+    .links-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .links-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .links-content a:hover{
+        opacity: 0.8;
+    }
+    .dropdb{
+        align-items: center;
+        width: 20px;
+    }
+    .mainpage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .bg1{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 915px;
+    }
+    .bg15{
+        height: 800px;
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+    }
+    .bg2{
+        width: 100%;
+        height: 810px;
+        z-index: 0;
+        position: relative;
+        margin-top: 0;
+    }
+    .tsongs{
+        z-index: 0;
+        margin-top: 30px;
+        position: absolute;
+        height: 100px;
+        width: 553px;
+        background-image: url(images/albumss.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox{
+        background-color: black;
+        height: 1550px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-width: 0;
+        border-color: grey;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+    }
+    .tsongs2{
+        z-index: 0;
+        margin-top: 1745px;
+        position: absolute;
+        height: 100px;
+        width: 553px;
+        background-image: url(images/albumsx.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox2{
+        background-color: black;
+        height: 650px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-width: 0;
+        border-color: green;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 1845px;
+    }
+    .bg3{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 910px;
+    }
+    .tsongs3{
+        z-index: 0;
+        margin-top: 2550px;
+        position: absolute;
+        height: 100px;
+        width: 553px;
+        background-image: url(images/albumsr.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox3{
+        background-color: black;
+        height: 740px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-width: 0;
+        border-color: green;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 2650px;
+    }
+    .bg4{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 1110px;
+    }
+    .tsongs4{
+        z-index: 0;
+        margin-top: 3460px;
+        position: absolute;
+        height: 100px;
+        width: 553px;
+        background-image: url(images/albumsw.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox4{
+        background-color: rgb(181, 0, 51);
+        height: 940px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-width: 0;
+        border-color: rgb(219, 219, 3);
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 3558px;
+    }
+    .bg5{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 560px;
+    }
+    .tsongs5{
+        z-index: 0;
+        margin-top: 4570px;
+        position: absolute;
+        height: 100px;
+        width: 553px;
+        background-image: url(images/albumst.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox5{
+        background-color: black;
+        height: 300px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-color: rgb(72, 61, 53);
+        border-width: 0;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 4670px;
+    }
+    .bg6{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 1000px;
+    }
+    .bg65{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 300px;
+    }
+    .tsongs6{
+        z-index: 0;
+        margin-top: 5130px;
+        position: absolute;
+        height: 100px;
+        width: 546px;
+        background-image: url(images/albumsb.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox6{
+        background-color: black;
+        height: 800px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-color: rgb(140, 0, 0);
+        border-width: 0;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 5230px;
+    }
+    .bg7{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+    }
+    .bg75{
+        width: 100%;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 0;
+        height: 100px;
+    }
+    .tsongs7{
+        z-index: 0;
+        margin-top: 6190px;
+        position: absolute;
+        height: 100px;
+        width: 546px;
+        background-image: url(images/albumsn.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .tcontentbox7{
+        background-color: black;
+        height: 800px;
+        width: 1400px;
+        z-index: 0;
+        position: absolute;
+        margin-top: 130px;
+        border-color: rgb(66, 66, 203);
+        border-width: 0;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-columns: 200px 1050px 150px;
+        text-align: center;
+        margin-top: 6290px;
+    }
+</style>
+<html>
+    <head>
+        <title>Albums</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="p">
+        <div class="header">
+            <div class="lp">
+                <div class="lpa">
+                <a href="albums.html"><button class="albums"> Albums<img class="dropdb" src="images/ddbr.png"></button></a>
+                    <div class="albums-content">
+                        <a href="#">The Noise</a>
+                        <a href="#">Trilogy</a>
+                        <a href="#">Kiss Land</a>
+                        <a href="#">Beauty Behind the Madness</a>
+                        <a href="#">Starboy</a>
+                        <a href="#">My Dear Melancholy</a>
+                        <a href="#">After Hours</a>
+                        <a href="#">Dawn FM</a>
+                    </div>
+                </div>
+                <div class="lpf">
+                    <a href="features.html"><button class="features"> Features<img class="dropdb" src="images/ddbr.png"></button></a>
+                    <div class="features-content">
+                        <a href="#">Trilogy</a>
+                        <a href="#">Kiss Land</a>
+                        <a href="#">Beauty Behind the Madness</a>
+                        <a href="#">Starboy</a>
+                        <a href="#">My Dear Melancholy</a>
+                        <a href="#">After Hours</a>
+                        <a href="#">Dawn FM</a>
+                    </div>
+                </div>
+                <a href="Early-Life.html"><button class="el"> Early life</button></a>
+                <div class="lpl">
+                <button class="links"> Links<img class="dropdb" src="images/ddbr.png"></button>
+                    <div class="links-content">
+                        <a href="https://www.facebook.com/theweeknd" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/theweeknd/" target="_blank">Instagram</a>
+                        <a href="https://soundcloud.com/theweeknd" target="_blank">Soundcloud</a>
+                        <a href="https://itunes.apple.com/us/artist/the-weeknd/479756766" target="_blank">Apple Music</a>
+                        <a href="https://music.apple.com/us/artist/the-weeknd/479756766" target="_blank">Spotify</a>
+                        <a href="https://twitter.com/TheWeeknd" target="_blank">Twitter</a>
+                        <a href="https://www.youtube.com/user/TheWeekndVEVO" target="_blank">Youtube</a>
+                        <a href="https://www.theweeknd.com/" target="_blank">Official Website</a>
+                        <a href="https://shop.theweeknd.com/" target="_blank">Shop</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mp">
+                <a href="Main Page.html"><img class="logo" src="images/logo.png"></a>
+            </div>
+            <div class="rp">
+                <input class="sb" type="text" placeholder="Search">
+                <button class="xo">
+                    <img class="xo-img" src="images/XO.png">
+                </button>
+            </div>
+        </div>
+        <div class="mainpage">
+            <img class="bg1" src="images/tbg.png">
+            <img class="bg15" src="images/tbg.png">
+                <button class="tsongs"></button>
+                <div class="tcontentbox">
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">High for This</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The eerie opening track on The Weeknd's debut project takes us into an interaction between Abel and a girl being introduced to the XO nightlife. This song also serves as a notice for listeners to prepare to dive into the life of an innovative, edgy artist.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=sX9DgavXiN4&ab_channel=TheWeeknd" style="color: grey; text-decoration: none;" target="_blank">Youtube  </a><a href="https://open.spotify.com/track/5fohLPNqO6TqwrZ7BoUWUT" style="color:grey; text-decoration: none" target="_blank"> Spotify</a><br><a href="https://genius.com/The-weeknd-high-for-this-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">What You Need</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">This slow, seductive ballad draws on a metaphor equating The Weeknd to the collective group of drugs he ingests and provides to his lovers. The female being serenaded here is victim to both a physical dependency on drugs and an emotional dependency for connection with Abel.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=sX9DgavXiN4&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7IpDQcksaT8SxS7vOX4SRm" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-what-you-need-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">House of Balloons/<br>Glass Table Girls</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">In the first of many two part songs, Abel describes a drug induced party scene, most likely going on in his former house on 65 Spencer, which was one of the many influences for House of Balloons. In an interview with Rolling Stone, Abel shared the party experience that he and his crew had.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=8ex38L8xtNI&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/50iiDJGpAPdr2VTrz999XA" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-house-of-balloons-glass-table-girls-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Morning</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The morning has come for Abel and his love interest, and the high from the previous night sends Abel's girl departing and Abel himself into a candid, reflective state about his musical progression as well as the females that emerge in his nightlife: prostitutes and strippers.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=5TAko3RH0bk&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6u0dQik0aif7FQlrhycG1L" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-morning-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Wicked Games</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">Abel finds himself in a first-person narrative exploring the subject of romance with a female (possibly a prostitute or stripper), knowing that it will fail in the end. Despite having awareness of this, he dives into the interaction because he needs confidence.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=O1OTWCd40bc&ab_channel=TheWeekndVEVO" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6VwBbL8CzPiC4QV66ay7oR" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-wicked-games-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The Party &<br>The After Party</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">In this two part song, Abel gives temporary love, sex, and drugs to a girl who desperately wants it. During the party, Abel's not only willing, but more than happy to serve this girl. However, once he's got her falling for him, Abel begins to show his true colors during the afterparty. Both the...</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=yI-zb_aP0So&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0dcf0L6F1LUA1nE2zWH4J2" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-party-and-the-after-party-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Coming Down</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">“Coming Down” details the feelings of a young man who, when under the influence, doesn't seem to care about his partner, yet, post-high, his feelings for her re-surface, in spite of his implied infidelity to her.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=WVg1mbxTkFo&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3PsS445MHcmtroGTstfTbm" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-coming-down-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Loft Music</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">Abel takes a female to his loft in the city to have some fun in this uptempo track. The track samples “Gila” from Beach House's 2008 album Devotion. This is the second time Abel's sampled a Beach House track, the first time being on “The Party & the After Party.”</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=HOdNMwTNNhA&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7xqANDRz8JFxkwfY65WISy" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-loft-music-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Knowning</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">On the final track on House of Balloons, we get a peek inside of the mind of Abel during a sexual encounter with a female who's been around as much as he has. Although he “knows everything,” the listener does as well.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=vPp5Ty9EE6k&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6AirEKLAv80bFaIDKpMi7I" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-knowing-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Twenty Eight</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The title “Twenty Eight” (28) is approximately the amount of grams that makes up an ounce. This is infamously known in the illegal drug trade. The title creates more emphasis as to how The Weeknd's music has a certain drug inducing effect on his fans.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=2_ScGcuXZqc&ab_channel=TheWeekndVEVO" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1FJrsh1NbV9eRw5JQt3M4e" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-twenty-eight-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Lonely Star</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The “Lonely Star” is a girl Abel only sees on Thursday. While she'll be his “star” he describes in verse one that pain and regret are “Thursday girl's,” best friends he goes on to describe that although they are her best friends he could be her best friend.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=pdH1kXzquQo&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0p3sSUXDohjddeKlnvGbCD" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-lonely-star-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Life of the Party</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The Weeknd disguises bad intentions with love and temptation. He's persuading a rich girl who loves cocaine into entering his world.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=_bSXY75R3Wc&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4yzaniwZb01bp0gT5BYwBv" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-life-of-the-party-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Thursday</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The titular track from Thursday provides insight into the meaning of the title, showing that Abel's feelings or actions drastically change toward this girl from day to day.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=0Suprl56Owg&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4fiYSa6ln7h0scprgNEs0g" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-thursday-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Zone</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Before Abel can get involved with this girl, who isn't his “Lonely Star,” he has to “get in [his] zone” by leaning and smoking up.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=YWIhwplfx4Q&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/46X8c9qJzpBLYcos3OX0CE" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-zone-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Birds Pt. 1</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">In this track, The Weeknd warns his girl to not fall in love with him, or he will just leave her. However, she can't seem to help herself, and Abel does not want to be the one held responsible.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=t2_YyRBYZjM&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/323ujVhfSg16TlRK0PB5JY" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-birds-pt-1-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Birds Pt. 2</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">After The Weeknd proclaims that the “Thursday girl” foolishly fell in love with a bird, one of the darkest, most eerie songs in Abel's discography emerges.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=9FE-Pwm2cyc&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/51LmI5GE3tHKISLNZMjDPC" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-birds-pt-2-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Gone</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">“Gone” provides arguably the deepest and rawest insight into a night of Abel's in his discography, as the listener gets to feel Abel's submission to drugs and alcohol both lyrically and sonically.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=CqHKfscXS64&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3vFj4xuQTXHOuo6L0qGafv" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-gone-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Rolling Stone</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">A “rolling stone” refers to smoking weed while rolling on ecstasy. The title alludes to Bob Dylan's “Like A Rolling Stone”, where the phrase means a man who never settles down, but rather restlessly moves through the world.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=fCPkgAIANys&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/29fTi7Tdh9CiU8HuVDaqVY" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-rolling-stone-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Heaven or Las Vegas</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">To close the Thursday narrative, The Weeknd cites a lack of a father figure as the reasoning behind the events that he documents on this tape. In contrasting Heaven and the hellish, vice-filled “Sin City,” this song explores the hedonism that has become a trademark to The Weeknd's songs.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=dXbJ8-38yHw&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3hDnFYwpnY0wONZDkYxUsj" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-heaven-or-las-vegas-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Valerie</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">In this addition to the Thursday narrative, Abel sings about a girl, likely the “Lonely Star,” that he truly loves yet is cheating on.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=47WlgETfamE&ab_channel=TheWeeknd-Topic" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4fLnXd56RsWN4ZBtb9TegQ" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-valerie-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">D.D.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The opener to Echoes of Silence is The Weeknd's rendition of Michael Jackson's classic, “Dirty Diana”, but with an even darker vibe.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=FXT1oKrgq0o&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7eZ7ODAt9cALYnWLO8F6Fd" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-dd-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Montreal</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">With Illangelo's thunderous bass, rattling snares, and The Weeknd's wondrous falsetto, “Montreal” is the first original song from Echoes of Silence. In his first interview ever with Complex, Abel recalls recording Echoes of Silence: "Echoes of Silence was made in Montreal. I had a lot of darkness in that city."</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=TV1r4m8c9SI&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6fRgjqJptZry7fipP2Beyh" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-montreal-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Outside</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">In “Outside”, Abel describes a drug-filled sexual encounter with a woman, who had recently broken up with her boyfriend. Enticing her with every syllable within his words, The Weeknd paints a picture of what sex is like with him.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=umvomiY7804&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1yhDPgIPGoe3Bf8wRsK4u7" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-outside-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">XO/The Host</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">The track serves as the XO anthem, XO referring to The Weeknd's clique. He's trying to get his girl to roll with him and indulge in his lifestyle, a pressure that becomes a key theme for the entire project.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=6FFSCF0gXt0&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0C5WrEPjUYPxVkKyth1Lbz" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-xo-the-host-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Initiation</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">In a girl's quest for his love and acceptance, The Weeknd describes the dark, drug-induced lifestyle that she has to comply with. Getting down with him means getting down with the whole XO crew.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=EDFEQyx7o4k&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3H37ijjdmKz0dQLgUGzpjx" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-initiation-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Same Old Song</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">This song is about an old girlfriend who did him wrong & she wants him back now that he's famous.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=NID-2orTN8U&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3Dt75NjLThmoBTp5wQC7g7" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-same-old-song-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">The Fall</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">Almost a spiritual successor to the 7th track on House of Balloons, “Coming Down”, “The Fall ” sees Abel discussing a lack of fear for the worst case scenario, since he's already been through the worst.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=YK9N-Xh32eE&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0cAHXlLhQjSKDN6vjc4LD6" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-fall-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Next</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">This song's about how popularity of his music has gotten him girls, but he knows they're only out to get him because he's the next big thing. There is no love.</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=-iW1-BuJ_Hc&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4m0KaNb0ClCOvgThd2Gv2b" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-next-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 14px;">Echoes of Silence</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">A very melancholic yet powerful conclusion to the tape, The Weeknd presents the audience with a piercing question: is the girl the victim of this narrative, or is he?</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=bHFc5ZfEdBQ&ab_channel=TheWeeknd" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0epdpETQPQDSGQNJqIWHZi" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-echoes-of-silence-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">Till Dawn<br>(Here Comes the Sun)</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;">Continuing the ambiguity of the previous song, Abel concludes the Trilogy on a rather triumphant note for both himself and Valerie. While both parties feel as though they are leaving the relationship as the independent instead of the dependent, both also leave a window open for...</div>
+                    <div style="background-color: black; color: grey; border-style: solid; border-color: grey; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=xSSzZ6HgkFQ&ab_channel=TheWeeknd-Topic" target="_blank" style="color: grey; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6Rqe6ghJ6t9SlQ2pRrt5tI" target="_blank" style="color:grey; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-till-dawn-here-comes-the-sun-lyrics" target="_blank" style="color: grey; text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg2" src="images/gradient.png">
+                <button class="tsongs2"></button>
+                <div class="tcontentbox2">
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Professional</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">The intro to the opener for Kiss Land depicts the life of the entertainer - the professional - not necessarily a stripper. He also talks about the consumer/entertainer relationship, his own naivety, and the addiction of fame beyond the money.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=tcLr-GIJQfI&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2gOEWbtEzHtpHb9fywSEiw" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-professional-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">The Town</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">The Weeknd explains in this song how he dealt with a woman, who left him for someone else, even though she became single later, and how he knew she would take him back no matter what. He also uses the narrative as a metaphor for leaving Toronto to go around the world.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=c7GkZd7T3tk&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3RB6zxrgPQBUxpTtoMW60r" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-town-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Adaptation</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Abel released a snippet from his acclaimed debut album Kiss Land on the 30th of August via YouTube with a very slurred video of him singing in the studio. It was also revealed the song features a sample from The Police's “Bring On the Night.”</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=pfnnmwLR8vY&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4pHQ9RYFhn3W0ha5KEuMnj" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-adaptation-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Love in the Sky</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">The third single off of Abel's 2013 album “Kiss Land”. Released July 30th. On July 30th, a short video of a portion of the song was released on Abel's official Youtube account.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=AU3D8Yfzlxs&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7fSKE9J3udo8zpq1ceYTEa" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-love-in-the-sky-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Belong to the World</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">“Belong to the World,” the second single from The Weeknd's debut album, Kiss Land, samples “Machine Gun” by Portishead.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=lYO77zNhWl4&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2jst5B18Q3PN3rwwIfnAgp" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-belong-to-the-world-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Live For</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Here, The Weeknd and Drake detail their party-oriented lifestyles with a somewhat defensive tone. This dualistic attitude is similar to the undertones present in prior collaborations, as heard in tracks like “Crew Love”, from 2011's Take Care.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=IqLlfuLrhxM&ab_channel=TheWeeknd" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/5TiqpChMv5rqzAwfRr8h1Y" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-live-for-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Wanderlust</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Arguably the most Michael Jackson-esque song on the album, Wanderlust describes, aside from Abel's own sexual desires, how misconstrued the idea of real “love” is today.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=vlrC-y1I3go&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6V9TlCdwLeQes4FX5zxz3f" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-wanderlust-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Kiss Land</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Released on May 16, 2013, on his original Youtube account, this is the first full song the Weeknd released since he (re)released Trilogy in November of 2012 with the three bonus tracks. This is the title track off the album Kiss Land and is produced by Silky Johnson.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=Wq6V9YpE1aE&ab_channel=TheWeeknd" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/album/0jd24pQ5ueY5rVC4H3jTtC" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-kiss-land-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Pretty</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">This consists as the ninth track of The Weeknd's debut album, Kiss Land, which focuses on how Abel is cheated on by his partner and finds a new love. Also as confirmed on the David Letterman Show, The Weeknd's “Pretty” is deeply influenced from, Phil Collins “In the Air Tonight”. </div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=HxilwT1sKSo&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1j0TqbB4ajwaJqyZnEK8kO" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-pretty-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Tears in the Rain</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Final song on the standard edition of The Weeknd's debut studio album, Kiss Land. The Weeknd has mentioned that this album was heavily influenced by the movie Blade Runner, with this song's title actually coming from a scene in the movie.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=LceUbSZD_vk&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4TgYcx5TPQF7xC79b6v4hP" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-tears-in-the-rain-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;">Wanderlust (Pharrell Remix)</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;"> None</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=untYQU68HoY&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/5WsCmd32VvISX0RrTUZgc8" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-wanderlust-pharrell-remix-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 14px;">Odd Look</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"> Kavinsky recruits The Weeknd for the latest remix of “Odd Look” and this results in a party banger, making us listeners craving more collaborations from the two.</div>
+                    <div style="background-color: black; color: rgb(14, 169, 14); border-style: solid; border-color: rgb(14, 169, 14); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=OSW2zeM3yLU&ab_channel=RecordMakers" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3Q6mwJseOFYBJ10d5CXp4o" target="_blank" style="color:rgb(14, 169, 14); text-decoration: none"> Spotify</a><br><a href="https://genius.com/Kavinsky-odd-look-the-weeknd-remix-lyrics" target="_blank" style="color: rgb(14, 169, 14); text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg3" src="images/bg3.png">
+                <button class="tsongs3"></button>
+                <div class="tcontentbox3">
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Real Life</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">The Weeknd begins his 2015 album, Beauty Behind the Madness, with advice from his own mother on how his life was going to destroy him over time. Here, we find Abel opening up about mistakes and claiming them as such, rather than in the storytelling aspect he has utilized during his...</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=EjlLdjzE7dg&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/03j354P848KtNU2FVSwkDG" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-real-life-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Losers</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Abel dropped out of highschool at 17, along with his friend Lamar Taylor to pursue music. Even though The Weeknd and Labrinth use the same lyrics in their verses - they represent The Weeknd & Lamar making the bold decision to leave and chase their dreams.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=xNKOrBA9Sp0&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1bAvtmTl0F9loyz9AwPwp7" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-losers-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Tell Your Friends</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">The song has our Canadian crooner inviting listeners to take a real look at his lifestyle - Abel has nothing to hide. Self destruction, chasing fame, relationships with women and drugs are all major themes throughout the album. The track was produced by Kanye West, who approached Abel...</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=j1ngEIxopUU&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1mhVXWduD8ReDwusfaHNwU" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-tell-your-friends-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Often</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">This song was originally released in 2014 along with the stand-alone records “Or Nah (Remix)” and “Drunk in Love (Remix).” In July 2015, it was revealed that this song would appear as the fourth track on The Weeknd's second studio album, Beauty Behind the Madness.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=JPIhUaONiLU&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4PhsKqMdgMEUSstTDAmMpg" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-often-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">The Hills</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Originally nicknamed “Mood Music” and first teased in a live performance at SXSW, the narrative of “The Hills” is a sinking sexual affair. Abel sets the record straight about what this woman means to him, and reminds her that she plays an equally guilty part in this affair.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=yzTuBuRdAyA&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-the-hills-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Acquainted</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Originally recorded as “Girls Born in the 90's”, “Acquainted” was re-recorded and re-titled after it was leaked with the Billboard chart-topper “Can't Feel My Face” and “In the Night”.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=1mOGF169Eno&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7uJH0YdSZL6psjxI6Xy08b" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-acquainted-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Can't Feel My Face</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">This song personifies drug addiction, likening it to the love of a woman and has been described as “classic pop” by critics, comparing its sound to that of Michael Jackson.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=KEI4qSrkPAs&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/22VdIZQfgXJea34mQxlt81" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-cant-feel-my-face-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Shameless</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Shameless” presents a friends-with-benefits arrangement gone bad. Abel continues in the sexual relationship, even though he realizes the emotional damage it is doing to his partner. Instead of being apologetic, he blames the girl for not being honest with herself.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=polycpBREYA&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6C6fHTuFUxVtJpBOOaMvJr" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-shameless-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Earned It</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Set to one of his most upbeat and orchestral instrumentals yet, he dances between classy and lecherous as he woos the one girl he truly loves. This mirrors Christian's infatuation as he enjoys Ana's (fleeting) innocence in the film (Fifty Shades of Grey).</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=waU75jdUnYw&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4frLb7nWtsz2ymBE6k2GRP" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-earned-it-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">In The Night</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Though upbeat in tempo, “In the Night” explores dark themes following a survivor of childhood sexual abuse, similar to the “horror stories” told on The Weeknd's debut studio album, Kiss Land. The New York Times describes “In the Night” as the album's most electric moment.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=2iFa5We6zqw&ab_channel=TheWeekndVEVO" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/25KybV9BOUlvcnv7nN3Pyo" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-in-the-night-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">As You Are</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">It is about being in a relationship that is clearly destined to fail. Both partners recognize their impending doom, but their young love causes them to be optimistic and blinds them from accepting their fate. Thus, they are allowing themselves to be hurt in the long run.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=8CWy_-afIpY&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3H3qBumaYj67PT3aMEBvAP" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-as-you-are-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Dark Times</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Dark Times” recruits English pop star Ed Sheeran as the pair sing of the addictions they fall into during their respective depressions - acting as a warning sign for women to stay away.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=BubtwlAXfMw&ab_channel=TroySmith" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6J7PIkhtHwmFjPLq0SyuPj" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-dark-times-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Prisoner</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">On this morbid-pop-meets-lusty-R&B track, the addict (Abel) and the tortured lover (Lana), respectively croon about their pains- Abel comes to grips with falling in love with fame, while Lana contemplates her relationship with Hollywood.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=x0bRHmTQEsE&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1gZADNt16Oh23jWyMYRk4p" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-prisoner-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Angel</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">On this epic closer to Beauty Behind the Madness, The Weeknd shows major remorse to his “angel”. The connection of love holds on by a bare thread as Abel wishes his special someone the best, hoping she finds somebody to love.</div>
+                    <div style="background-color: black; color: yellow; border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=QAAOynFujNw&ab_channel=TheWeeknd-Topic" target="_blank" style="color: yellow; text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0wzPHTgOtFIDhk2rD3Au4x" target="_blank" style="color:yellow; text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-angel-lyrics" target="_blank" style="color: yellow; text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg4" src="images/bg4.png">
+                <button class="tsongs4"></button>
+                <div class="tcontentbox4">
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Starboy</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Starboy” potentially marks a new era for The Weeknd. On the release date of the song, Abel posted an Instagram picture with the caption “r.i.p '@abelxo,’” marking the turn of his character and sound.</div>  
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=34Na4j8AVgA&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-starboy-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Party Monster</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">With an upbeat-yet-dark attitude, Abel details a re-introduction to his lavish party lifestyle and his pursuit of a woman who is already spoken for.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=diW6jXhLE0E&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4F7A0DXBrmUAkp32uenhZt" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-party-monster-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">False Alarm</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“False Alarm” is an ode to a woman consumed by her love of material things, who has been caught up in the 'flashing lights' and pressure that has come with a privileged lifestyle.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=CW5oGRx9CLM&ab_channel=TheWeekndVEVO"  target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4oeaIftdpT3JuZLcCkKmVE" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-false-alarm-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Reminder</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Reminder” is Abel's response to his critics following the release of Beauty Behind the Madness that suggest he's lost his drug-fueled way. Much as he did on 2015's “Tell Your Friends,” Abel confidently assures us that the King of the Fall is here to stay.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=JZjAg6fK-BQ&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/37F0uwRSrdzkBiuj0D5UHI" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-reminder-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Rockin'</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">The Weeknd's “Rockin'” is a ravey, club song detailing a carefree relationship with absolutely no strings attached. The Weeknd describes a relationship that doesn't require longstanding commitment, but one that features fun; “rocking” within the context of the song.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=BCvmAySCnLk&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/36YCdzT57us0LhDmCYtrNE" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-rockin-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Secrets</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Secrets,” initially inspired by Dolly Parton and Conway Twitty, finds Abel explaining that he can fully understand what's going on in the girls mind. A preview of the song appeared on the “M A N I A” visuals, released on the 23rd of November 2016, two days before the official release.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=eXDU9um19HM&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/00NAQYOP4AmWR549nnYJZu" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-secrets-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">True Colors</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Following “Secrets,” which explored a deceptive love interest, “True Colors” is about learning who this female really is, not who she wants Abel to think she is. The monogamous themes explored throughout the project also continue to be expressed through this track.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=3Ox2AWEFhjQ&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1oGdVdYjeQvojGKDddxLQQ" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-true-colors-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Stargirl Interlude</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">The title of the track is a reference to the success of Abel as a “Starboy,” who happens to need a superwoman to complete him. However, the lyrics are mysterious in nature and Del Rey starts off low and ends high, The Weeknd closing off the 2-minute interlude.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=Ir1tMjvMAWI&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4EDijkJdHBZZ0GwJ12iTAj" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-stargirl-interlude-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Sidewalks</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Both The Weeknd and Kendrick grew up in less-than-ideal settings. Abel was born in Scarborough, Ontario, Canada, an area with one of the highest crime rates in Greater Toronto, while Kendrick grew up in Compton, California, one of the deadliest cities in the world.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=DWi73D1vZTc&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4h90qkbnW1Qq6pBhoPvwko" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-sidewalks-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Six Feet Under</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">With the cadence of “Low Life” and the subject matter of “6 INCH,” The Weeknd's “Six Feet Under” is about a girl who'll stop at nothing to make money, even when she's six feet under the ground in her grave.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=Jt5nPuMgKA8&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4mU5iXHeLgbR94siF7p1sY" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-six-feet-under-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Love to Lay</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Love To Lay” is Abel's recognition of the fact that there are women similar to him - who don't actively look for love and relationships. The woman who Abel used to love only wanted to lay down for the night, making loving her uneasy.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=a1PkVEHV-w8&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/27BgDmciSjoxTG0almHTpZ" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-love-to-lay-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">A Lonely Night</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">“A Lonely Night” finds Abel apologizing for making a girl believe they'd ever be anything more than a classic one night stand.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=atGlHRi0n4A&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0ifooM33X1iBxVYyOkSbXW" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-a-lonely-night-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Attention</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Attention” analyzes turbulence in a relationship in which Abel's partner feels undervalued and ignored. This could be one of the challenges faced with love when you become a “Starboy.”</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=RPCqZssID78&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6pDVjCUA3B1vg9waKutAsv" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-attention-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Ordinary Life</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Abel begins to express concern or regret about the drug-fueled, party-orientated life he is living on “Ordinary Life”. He acknowledges that he cannot, and does not, want to change the things he has done nor the way he is living.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=tX2ncrjdZ3o&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/15k2nBQJ0teDmPZHrOXL2N" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-ordinary-life-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Nothing Without You</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“Nothing Without You” differs from other Starboy songs—such as “Rockin'” and “Party Monster”—in that Abel admits to loving this girl, and wanting to stay together with her. Abel credits his lover for making him who he is today, whether that be his fame, his character or even his music.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=1ExndLNGnmY&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/57qiTKh8bVX0VtfUNTQqhw" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-nothing-without-you-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">All I Know</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">“All I Know” is an unusually tender track for the womanizing Weeknd. On the track he is trying to calm the doubts of a woman who's heard of his bad reputation and doesn't want to get hurt.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=sfvFAqzIGh8&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0NWqNXBJTpXbkI5rPWNy3p" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-all-i-know-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">Die for You</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">On “Die For You” The Weeknd croons about the conflicting feelings and pain that comes with letting go of someone he still has intense feelings for.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=uPD0QOGTmMI&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2Ch7LmS7r2Gy2kc64wv3Bz" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-die-for-you-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 14px;">I Feel It Coming</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;">Inspired by house-and '80s pop, “I Feel It Coming” is about wanting more from a relationship. The song differs from The Weeknd's usual attitudes towards love, which revolve around one-night stands and lighthearted fun.</div>
+                    <div style="background-color: rgb(181, 0, 51); color: rgb(219, 219, 3); border-style: solid; border-color: yellow; border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=qFLhGq0060w&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3dhjNA0jGA8vHBQ1VdD6vV" target="_blank" style="color:rgb(219, 219, 3); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-i-feel-it-coming-lyrics" target="_blank" style="color: rgb(219, 219, 3); text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg5" src="images/bg5.png">
+                <button class="tsongs5"></button>
+                <div class="tcontentbox5">
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Call Out My Name</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">Abel explains that, although he is aware that his last lover didn't put as much effort into the relationship as he did (“wasted my time”), he still wishes deep down that she would need him as much as he still needs her.</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=M4ZoCHID9GI&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/09mEdoA6zrmBPgTEN5qXmN" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-call-out-my-name-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Try Me</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">“Try Me” features Abel's trademark somber and haunting tones as he attempts to convince a previous lover to leave her current partner for him.</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=2DjM0lY4pbE&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4ppTAJUbNXELZcoUaL90wo" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-try-me-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Wasted Times</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">“Wasted Times” sees The Weeknd putting his two high-profile relationships with Bella Hadid and Selena Gomez in perspective. It can be inferred from lines referencing her past as an equestrian that the girl that The Weeknd is reminiscing about is Bella. Moreover, he and Bella recently...</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=R0rKB_bsUNg&ab_channel=TheWeeknd" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7DKS0rX27cCEPsK0R6tFWS" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-wasted-times-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">I Was Never There</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">The Weeknd waxes lyrical about the end of a meaningful relationship. He is unable to deal with the break-up in a healthy way, resorting to drugs, alcohol, and casual sex to numb the pain. While he recognizes that this is self-destructive, he pins the blame on the other party.</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=OlStmta0Vh4&ab_channel=TheWeeknd" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1cKHdTo9u0ZymJdPGSh6nq" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-and-gesaffelstein-i-was-never-there-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Hurt You</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">On “Hurt You” The Weeknd issues a warning to a woman who is still in love with him. However, while she is looking for love, he does not want it in fear of hurting her again. </div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=wKDU5pXhf5o&ab_channel=TheWeeknd" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6QdnKD1zwEgyOWtkrdzlOF" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-and-gesaffelstein-hurt-you-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 14px;">Privilege</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">The chorus references the ultimatum that Morpheus gives Neo in The Matrix, where the “red pill” is facing reality and the “blue pill” is living in blissful ignorance. Abel flips this into a line about re-embracing his well-documented past with pills in addition to drinking alcohol to cope with the end of...</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=JcVDXHeD59c&ab_channel=TheWeeknd" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0Nwar8rweBUyfyuoyjjUvk" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-privilege-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">Call Out My Name (A Cappella)</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;">“Call Out My Name (A Cappella)” was released without any prior announcement by The Weeknd on May 10, 2019. It is the seventh track on the digital and streaming versions of My Dear Melancholy, and, according to Abel, is meant to be listened to “while you wait” for his upcoming fourth...</div>
+                    <div style="background-color: black; color: rgb(141, 59, 0); border-style: solid; border-color: rgb(141, 59, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=HQfCoXAPowo&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/5PTfZsGlsDDPH8i3PdQnXJ" target="_blank" style="color:rgb(141, 59, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-call-out-my-name-a-cappella-lyrics" target="_blank" style="color: rgb(141, 59, 0); text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg6" src="images/bg6.jpg">
+            <img class="bg65" src="images/bg6.jpg">
+                <button class="tsongs6"></button>
+                <div class="tcontentbox6">
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Alone Again</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">On the track, Abel addresses a substance abuse issue and overdose scare, asking his lover to remind him of who he is and draw him out of his problem. The track's production features twinkly synthesizers transitioning into a harder hitting beat with droning bass and aggressive drums.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=JH398xAYpZA&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6b5P51m8xx2XA6U7sdNZ5E" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-alone-again-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Too Late</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Too Late” is a fast-paced, synthetic song that features the blame-taking theme from Abel that is seen all over the album, asking for forgiveness from his lover and to come and lead a life full of sin with him.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=Wh8DT09QCHI&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2K9Ovn1o2bTGqbsABGC6m3" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-too-late-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Hardest To Love</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Hardest to Love” features Abel reminiscing on his past behaviors in a relationship, blaming himself for its demise. The track's instrumental belongs to the genre of liquid drum & bass, a popular subgenre of electronica that rarely appears in mainstream pop music.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=pM3nIOYF2W8&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6kWxIqQDsKFYCJGbU4AjCX" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-hardest-to-love-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Scared To Live</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Scared To Live” is a song by The Weeknd which first premiered on Saturday Night Live on March 8, 2020. The ballad details how a tragic breakup left his lover doubting love.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=MzsU_sn2aIE&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4BGZF4oLbTL0pWm7C18pbv" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-scared-to-live-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Snowchild</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Snowchild” features Abel looking back at his past, addressing his fast come-up to fame and past vices like drugs and women that wanted him as he blew up. The track's title refers to cocaine's slang term “snow,” further cementing the song's commentary on Abel's well-known drug ridden past.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=G0JKdFjWkLA&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3WlbeuhfRSqU7ylK2Ui5U7" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-snowchild-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Escape from LA</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Escape From LA” is one of After Hours' most dark and lethargic moments, with Abel dismissively addressing his partner and her infidelity within their relationship. He eventually chalks up their rocky relationship's strifes to the fast-paced environment of Los Angeles and concludes that the...</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=vsARlcGW0jE&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1sOW4PuG5X3Ie3EXUhAopJ" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-escape-from-la-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Heartless</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">The track's accompanying music video released on December 3, 2019, features an intoxicated Abel gambling and smoking with producer Metro Boomin in Caesars Palace, Las Vegas, with blindingly bright lights, Vegas' most memorable feature, surrounding the two artists.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=1DpH-icPpl0&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6bnF93Rx87YqUBLSgjiMU8" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-heartless-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Faith</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Faith” is a somber banger that features The Weeknd exploring his usual themes of hedonism and partying over a beat by frequent collaborator Metro Boomin. He also opens up about his drug addiction and compares the act of getting high to losing one's religion.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=RcS_8-a-sMg&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3orEOtd8CPL8GFlpRpKuoE" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-faith-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Blinding Lights</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">Abel continues his tear through the city while under the influence of many substances, this time going to a strip club as well as driving a different luxury Mercedes Benz AMG-GT in the video.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=4NRXx6U8ABQ&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0sf12qNH5qcw8qpgymFOqD" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-blinding-lights-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">In Your Eyes</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“In Your Eyes” features The Weeknd singing in a more vulnerable manner than most of his other hedonistic songs, giving himself up to the feelings he can see in his lover and how that makes him feel.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=dqRZDebPIGs&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/7szuecWAPwGoV1e5vGu8tl" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-in-your-eyes-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Save Your Tears</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">On “Save Your Tears,” The Weeknd once again addresses his past relationships and recollects on the experiences they went through together, while also providing no emotional support for his ex. </div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=XXYlFuWEuKI&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-save-your-tears-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Repeat After Me (Interlude)</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Repeat After Me (Interlude)” is the sole interlude on After Hours. The song features Abel beckoning to his lover to repeat after him, essentially brainwashing them into loving him after the two have split up and she is with someone new.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=CE-Iy24NOTY&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/40U8d12pC5UHqmHwXjHjjl" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-repeat-after-me-interlude-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">After Hours</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">The song addresses a failed relationship that ended in heartbreak and serves as an apology letter for his past transgressions, as he desires reconciliation.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=ygTZZpVkmKg&ab_channel=TheWeeknd" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2p8IUWQDrpjuFltbdgLOag" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-after-hours-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Until I Bleed Out</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">He has given every last ounce of effort and emotion he can to the ventures he has undergone over the course of the record's track listing, leaving him unable to keep pushing further for his relationship that he constantly talks about on the record.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=i58MNnk6BhY&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2BcnxwxBuar5wjCaLqm5N3" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-until-i-bleed-out-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Nothing Compares</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">Abel seemingly comes to terms with his feelings for his lover, realizing that he will never be able to shake her and he will always love her more than anyone else he can find.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=-1RTYqxlRoA&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/5ciyqWW5YuGqF4Avu7uwry" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-nothing-compares-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Missed You</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Missed You” is a bonus track on the deluxe version of The Weeknd's fourth studio album After Hours. It is a very melancholy and reflective track from The Weeknd, with him coming to terms that he still has feelings for a past love in his life.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=Rhrb-bbDB5k&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/38uNCW1do0LKfMIt4MDkPo" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-missed-you-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 14px;">Final Lullaby</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;">“Final Lullaby” is a bonus track on the deluxe version of The Weeknd's fourth studio album After Hours. The “Lullaby” descriptor is aptly used for this very calm and soothing track, featuring Abel singing to his lover, helping them try to fall asleep.</div>
+                    <div style="background-color: black; color: rgb(140, 0, 0); border-style: solid; border-color: rgb(140, 0, 0); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=z6TNGXmZ7NQ&ab_channel=TheWeeknd-Topic" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6rhbL6MhAej39S8KupwjrC" target="_blank" style="color:rgb(140, 0, 0); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-final-lullaby-lyrics" target="_blank" style="color: rgb(140, 0, 0); text-decoration: none;">Lyrics</a></div>
+                </div>
+            <img class="bg7" src="images/bg7.jpg">
+                <button class="tsongs7"></button>
+                <div class="tcontentbox7">
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Song</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Description</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Link</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Dawn FM</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">The intro and title track of The Weeknd's fifth studio album includes additional narration from actor Jim Carrey, who also appears on the outro track.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=w8eFZoOcYKc&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6krYS8KtmNAYyb5uTZiYW4" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-dawn-fm-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Gasoline</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">On “Gasoline,” The Weeknd describes his parasitic relationship with his current lover. Using them as a crutch for his erratic drug problems, Abel begs his lover not to let him go, as they are the only thing that he has at this point.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=iOa7uE23qc4&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3KyKxJ4P3pVCgaZwaq2rUC" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-gasoline-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">How Do I Make You Love Me?</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">On “How Do I Make You Love Me?”, The Weeknd enters the dance-pop genre, lamenting over his lover and questioning what he has to do for their relationship to last.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=VLMo0rthnoo&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2Ghp894n1laIf2w98VeAOJ" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-how-do-i-make-you-love-me-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Take My Breath</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">Reminiscent of retro nostalgia from the late '90s combined with elements of psychedelic pop, Abel begins his project's rollout with a lead single that continues to be faithful to subject matter common in his music, delivering an upbeat anthem about hedonistic concepts like temptation, romance.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=rhTl_OyehF8&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/23FnV9ThaK01oNWc3E87yh" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-take-my-breath-extended-version-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Sacrifice</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">“Sacrifice” serves as the second single from The Weeknd's fifth studio album, Dawn FM. Co-produced by Swedish House Mafia, among others, the song marks the second collaboration between Abel and the trio, following “Moth to a Flame” back in October 2021.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=VafTMsrnSTU&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1nH2PkJL1XoUq8oE6tBZoU" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-sacrifice-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">A Tale by Quincy</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">The first interlude on The Weeknd's Dawn FM finds famed music producer Quincy Jones reflecting on his troubled upbringing, and how it impacted his relationships with both women, and his kids.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=ioL_Ozo_6iI&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/759ndr57jb0URg4j9YSWml" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-a-tale-by-quincy-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Out of Time</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">The track features a distressed Abel, as he realizes the mistakes he made in his relationship and croons for a second chance on the sleek, sensual sounding cut.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=2fDzCWNS3ig&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2SLwbpExuoBDZBpjfefCtV" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-out-of-time-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Here We Go... Again</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">In “Here We Go… Again,” Tyler, The Creator and The Weeknd pair up for the first time ever on a song, as they portray a story of caution in regards to the dark side of love and how its consuming beauty makes it impossible to avoid.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=rhVqSATlmQs&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4CCjPgOtEdNfPJHPj71zFf" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-here-we-go-again-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Best Friends</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">“Best Friends” sees Abel telling his friend who he's obviously having a sexual relationship with not to get too carried away and fall in love with him. Abel croons that he's been part of a toxic love before, and he still hasn't healed from it to handle love.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=hpNBXbJ7rzs&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1E5Xu8dur0fAjSP1VpVhAZ" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-best-friends-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Is There Someone Else?</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">In this track, The Weeknd asks his lover if there is someone else she is involved with other than him. Although he hints that he has not been loyal in his past relationships, he claims that he changed and begs her to be with him forever.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=b-esdxjN8N8&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/0mL82sxCRjrs3br407IdJh" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-is-there-someone-else-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Starry Eyes</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">In “Starry Eyes,” The Weeknd is discussing a common theme of Dawn FM-caution in regard to love-in light of a special girl. Abel's dream girl-one who he has been enamoured with since he was “young and alone in the world,"-has gone through struggles of her own: ones which have left...</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=_GA3dj_HxO4&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/6zzdyvVWjGrQBraSvuqJPY" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-starry-eyes-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Every Angel is Terrifying</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">The title of this song likely refers to a line from “Duino Elegies” by Rainer Maria Rilke. The poem represents Rilke's contemplation of the immaterial world, heavenly creatures and the unknown.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=kMXs99tPkcg&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3vJcz8exedHCjQ9ed95NqU" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-every-angel-is-terrifying-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Don't Break My Heart</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">Backed by a shallow, electric pop/r&b beat produced by The Weeknd himself and frequent collaborator Oneohtrix Point Never, “Don't Break My Heart” has the Weekend vocalizing about a woman who he describes as paralyzing and mesmerizing.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=OeqV6oyNHc0&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/3LAJkm4BFdM6Qx5vhmLxsN" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-dont-break-my-heart-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">I Heard You're Married</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;">On “I Heard You're Married,” The Weeknd and Lil Wayne express their feelings of being involved with a woman who's already taken. This is the duo's second collaboration since September 2013's “I'm Good,” off of Dedication 5.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=86kEbw4pvxU&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/1Oghf0LEF6mEHOzcO4pnLk" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-i-heard-youre-married-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Less Than Zero</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">On the disco-pop track, Abel sings about the way a girl that he used to be romantically involved with perceives him now, as less than zero.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=UKunvvN2iCk&ab_channel=TheWeeknd" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/2D4dV2KXDTszzJ3p3cFqhA" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-less-than-zero-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Phantom Regret by Jim</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 14px;">Phantom Regret is a poem spoken by Jim Carrey featuring background vocals by The Weeknd.</div>
+                    <div style="background-color: black; color: rgb(66, 66, 203); border-style: solid; border-color: rgb(66, 66, 203); border-width: 2px; padding-top: 5.5px;"><a href="https://www.youtube.com/watch?v=vCOXTEzfoJ4&ab_channel=TheWeekndVEVO" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Youtube  </a><a href="https://open.spotify.com/track/4nSzpc6A8koEEJBTE33cdK" target="_blank" style="color:rgb(66, 66, 203); text-decoration: none"> Spotify</a><br><a href="https://genius.com/The-weeknd-phantom-regret-by-jim-lyrics" target="_blank" style="color: rgb(66, 66, 203); text-decoration: none;">Lyrics</a></div>
+                </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width+device-width,initial-scale=1.0">
+        <style>
+            body{
+                height: 100%;
+                width: 100%;
+                background-image: url("mate.jpg");
+                background-repeat: no-repeat;
+            }
+        
+                
+            .start {
+                background-color: rgb(39, 194, 221);
+                border: 0;
+                border-radius: 56px;
+                letter-spacing: 2px;
+                color: #000000fe;
+                cursor: pointer;
+                display: inline-block;
+                font-family: Arial;
+                font-size: 18px;
+                font-weight: 600;
+                outline: 0;
+                padding: 16px 21px;
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top:75%;
+                left:50%;
+                text-align: center;
+                text-decoration: none;
+                
+                }
+               
+            @media (min-width: 768px) {
+                .start {
+                     padding: 16px 48px;
+                }
+            }
+           
+            .mesaj{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                letter-spacing: 4px;
+            }
+            .mesaj span{
+                font-family: Arial;
+                font-size:90px;
+                color:white;
+                display:inline-block;
+                transition: all .5s;
+                animation: animate 2s infinite;
+            }
+            .mesaj span:nth-child(1)
+            {
+                animation-delay: .5s;
+            }
+
+            .mesaj span:nth-child(2)
+            {
+                animation-delay: .2s;
+            }
+
+            .mesaj span:nth-child(3)
+            {
+                animation-delay: .3s;
+            }
+
+            .mesaj span:nth-child(4)
+            {
+                animation-delay: .4s;
+            }
+
+            .mesaj span:nth-child(5)
+            {
+                animation-delay: .5s;
+            }
+            @keyframes animate{
+                0%{
+                    color:  #00ffea;
+                    transform: translateY(0);
+                    margin-left: 0;
+                }
+                25%{
+                    color: rgb(235, 68, 193);
+                    transform: translateY(-15px);
+                    margin-left: 10;
+                    text-shadow: 0 15px 5px rgba(0,0,0,1);
+                }
+                100%{
+                    color: transparent;
+                    transform: translateY(0);
+                }
+             }
+        </style>
+    </head>
+    <body>
+        <button class="start" role="button" onclick="window.location.href='index.html'">CALCULATOR</button>
+
+       
+        <div class="mesaj">
+            <span>H</span>
+            <span>E</span>
+            <span>L</span>
+            <span>L</span>
+            <span>O</span>
+        </div>
+    </body>
+</html>

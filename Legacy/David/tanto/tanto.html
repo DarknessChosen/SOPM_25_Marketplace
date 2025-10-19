@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <title>The Shadow's Dojo</title>
+    <link href="tanto.css" rel="stylesheet" />
+</head>
+
+<!--Navbars, tre' sa fie pe fiecare site gen-->
+
+<body>
+    <nav class="navbar">
+        <button onclick="toggleMenu()" class="burger"></button>
+        <button class="button"><a class="home_link" href="main.html">Home</a></button>
+        <div class="dropdowns">
+            <div class="dropdown">
+                <button class="button">
+                    Weaponry
+                    <img src="chevron.svg" />
+                </button>
+                <div class="dropdown-menu">
+                    <button><a class="site_link" href="tanto.html">Tanto</a></button>
+                    <button><a class="site_link" href="katana.html">Katana</a></button>
+                    <button><a class="site_link" href="odachi.html">Odachi</a></button>
+                    <button><a class="site_link" href="sai.html">Sai</a></button>
+                    <button><a class="site_link" href="kgf.html">Knuckle Guard Knife</a></button>
+                    <button><a class="site_link" href="nunchucks.html">Nunchucks</a></button>
+                    <button><a class="site_link" href="chain.html">Weighted chain</a></button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">
+                    Throwables
+                    <img src="chevron.svg" />
+                </button>
+                <div class="dropdown-menu">
+                    <button><a class="site_link" href="knives.html">Knives</a></button>
+                    <button><a class="site_link" href="stars.html">Stars</a></button>
+                    <button><a class="site_link" href="axes.html">Axes</a></button>
+                    <button><a class="site_link" href="gun.html">Blowgun</a></button>
+                    <button><a class="site_link" href="caltrops.html">Caltrops</a></button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">
+                    Gear
+                    <img src="chevron.svg" />
+                </button>
+                <div class="dropdown-menu">
+                    <button><a class="site_link" href="armor.html">Body armor</a></button>
+                    <button><a class="site_link" href="grappling.html">Grappling hook</a></button>
+                    <button><a class="site_link" href="claws.html">Climbing claws</a></button>
+                    <button><a class="site_link" href="belt.html">Utility belt</a></button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">
+                    Practice Equipment
+                    <img src="chevron.svg" />
+                </button>
+                <div class="dropdown-menu">
+                    <button><a class="site_link" href="tsai.html">Sai</a></button>
+                    <button><a class="site_link" href="tdaito.html">Daito</a></button>
+                    <button><a class="site_link" href="tnunchucks.html">Nunchucks</a></button>
+                    <button><a class="site_link" href="tgun.html">Blowgun</a></button>
+                    <button><a class="site_link" href="target.html">Target</a></button>
+                    <button><a class="site_link" href="books.html">Training books</a></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
+
+    <!-- Chestii definitorii pentru tanto -->
+
+    <!--Slide-ul de imagini-->
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="tanto1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="tanto2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="tanto3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="tanto4.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">↞</a>
+        <a class="next" onclick="plusSlides(1)">↠</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <div class="tanto_text">
+        ➥Durable, reliable and easy to conceal tanto;<br>
+        ➥The perfect suit for those quick jobs where you don't want to
+        atract unwated attention;<br>
+        ➥Sharp edged blade with a mirror polish surface;<br>
+        ➥Handle carefully made from metal with an exterior paracord for extra grip;<br>
+        ➥Steel mark: 440 C;<br>
+        ➥Hardness: 55-57 HRC;<br>
+        ➥Length: 11.41'';<br>
+        ➥Weight: 3.88 oz;<br>
+        ➥Comes with a sheath for comfortable storing in the belt or attached to it.
+    </div>
+
+    <div class="tanto_text_header">Extra details</div>
+
+    <div class="tanto_text_detalis">
+        <p>Tanto Knife with Large Fixed Blade - full tang construction provides superior control and greater pressure
+            when cutting, slicing, stroking, chopping and other manipulations.<br>
+            Perfect Knife for every job that needs a fast, reliable and easy to hide weapon - your enemies won't even
+            notice the cold steel blade of the knife until it's too late.<br>
+            Matte Finished 440C Stainless Steel - excellent balance of hardness and corrosion resistance ensures proper
+            operation without sharpening. Provides razor sharp cutting performance and high durability, carefully crafted for professionals.<br>
+            Comes with Sheath - this solid and practical holder allows you to wear the knife on your belt. The
+            multifunctional sheath is made of heavy duty nylon cordura fabric.<br>
+        </p>
+    </div>
+
+</body>
+
+</html>

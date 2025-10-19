@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Speed</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #00AAFF, #fa6dff);
+            font-family: monospace;
+        }
+        .box {
+            border:2px solid #ad10de;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 8px;
+            margin: 10px;
+            outline: none;
+            display: flex;
+        }
+        .title {
+            text-align:center;
+            color: #ad10de;
+            text-decoration: underline;
+        }
+        span {
+          font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+            <h1 class="title">CONVERTOR DE VITEZA</h1>
+        <div>
+            <input type="number" value="0" id="mps" min="0" class="box" oninput="meter(this.value)" >
+            <span>METRII PE SECUNDA</span>
+        </div><br>
+
+        <div>
+            <input type="number" value="0" id="kph" min="0" class="box" oninput="kilo(this.value)">
+            <span>KILOMETRII PE ORA</span>
+        </div><br>
+
+        <div>
+            <input type="number" value="0" id="mph" min="0" class="box" oninput="mile(this.value)">
+            <span>MILE PE ORA</span>
+        </div><br>
+    <script>
+    let mps = document.getElementById('mps');
+    let kph = document.getElementById('kph');
+    let mph = document.getElementById('mph');
+    function meter(s) {
+        s = parseFloat(s);
+        kph.value = s * 3.6;
+        mph.value = s * 2.237;
+        knot.value = s * 1.944012;
+        mach.value = s / 340.3;
+    }
+
+    function kilo(s) {
+        s = parseFloat(s);
+        mps.value = s / 3.6;
+        mph.value = s / 1.609;
+        knot.value = s / 1.852;
+        mach.value = s / 1234.8;
+    }
+
+    function mile(s) {
+        s = parseFloat(s);
+        mps.value = s  / 2.237136;
+        kph.value = s * 1.609;
+        knot.value = s / 1.151;
+        mach.value = s / 767.3;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head><title>VOLUM</title></head>
+<style>
+    body {
+ padding: 0;
+ margin: 0;
+ background: linear-gradient(to right, #00AAFF, #ef73f3);
+}
+h1{
+    text-align:center;
+    font-family:cursive;
+    color: rgb(199, 80, 223);
+    text-shadow : 2px 2px 1px rgb(89, 30, 100);
+}
+h2 {
+    text-align: left;
+    color:#000000;
+}
+h3 {
+    text-align: left;
+    color:#000000;
+}
+</style>
+<body>
+    <h1>ARII</h1>
+    <h2>Aria patratului</h2>
+    <input type="number" id="input_latura" placeholder="Introduceti latura">
+    <input type="button" value="Find" id="input_button" > 
+ <script>
+    function calculateVolume_patrat(){
+        let latura = document.getElementById("input_latura").value;
+
+        let volume_patrat = Math.pow(latura, 2);
+        alert("Aria patratului este egal cu: "+volume_patrat.toFixed(2));
+    }
+    let button=document.getElementById("input_button");
+    button.onclick=calculateVolume_patrat;
+ 
+</script>
+    <h2>Aria triunghiului dreptunghic</h2>
+    <input type="number" id="input_c1" placeholder="Introduceti prima cateta">
+    <input type="number" id="input_c2" placeholder="Introduceti a doua cateta">
+    <input type="button" value="Find" id="input_button1" > 
+ <script>
+    function calculatearia_triunghi(){
+        let c1 = document.getElementById("input_c1").value;
+        let c2 = document.getElementById("input_c2").value;
+
+
+        let aria_triunghi = c1 * c2/2;
+        alert("Aria triunghiului este egal cu: "+aria_triunghi.toFixed(2));
+    }
+    let button1=document.getElementById("input_button1");
+    button1.onclick=calculatearia_triunghi;
+ 
+</script>
+    <h2>Aria dreptunghiului</h2>
+    <input type="number" id="input_lungime" placeholder="Introduceti lungimea">
+    <input type="number" id="input_latime" placeholder="Introduceti latimea">
+    <input type="button" value="Find" id="input_button2" > 
+ <script>
+    function calculatearia_dreptunghi(){
+        let lungime = document.getElementById("input_lungime").value;
+        let latime = document.getElementById("input_latime").value;
+
+
+        let aria_dreptunghi = lungime * latime;
+        alert("Aria dreptunghiului este egal cu: "+aria_dreptunghi.toFixed(2));
+    }
+    let button2=document.getElementById("input_button2");
+    button2.onclick=calculatearia_dreptunghi;
+</script>
+<h2>Aria triunghiului</h2>
+<input type="number" id="input_baza1" placeholder="Introduceti baza">
+<input type="number" id="input_inaltimea1" placeholder="Introduceti inaltimea">
+<input type="button" value="Find" id="input_button5" > 
+<script>
+function calculatearia_triunghi1(){
+    let baza1 = document.getElementById("input_baza1").value;
+    let inaltimea1 = document.getElementById("input_inaltimea1").value;
+
+
+    let aria_triunghi1 = baza1 * inaltimea1 /2;
+    alert("Aria triunghiului este egal cu: "+aria_triunghi1.toFixed(2));
+}
+let button5=document.getElementById("input_button5");
+button5.onclick=calculatearia_triunghi1;
+</script>
+
+
+    <h2>Aria paralelogramului</h2>
+    <input type="number" id="input_baza" placeholder="Introduceti baza">
+    <input type="number" id="input_inaltimea" placeholder="Introduceti inaltimea">
+    <input type="button" value="Find" id="input_button3" > 
+ <script>
+    function calculatearia_paralelogram(){
+        let baza = document.getElementById("input_baza").value;
+        let inaltimea = document.getElementById("input_inaltimea").value;
+
+
+        let aria_paralelogram = baza * inaltimea;
+        alert("Aria paralelogramului este egal cu: "+aria_paralelogram.toFixed(2));
+    }
+    let button3=document.getElementById("input_button3");
+    button3.onclick=calculatearia_paralelogram;
+</script>
+
+    <h2>Aria cercului</h2>
+    <input type="number" id="input_raza" placeholder="Introduceti raza">
+    <input type="button" value="Find" id="input_button4" > 
+ <script>
+    function calculateVolume_cerc(){
+        let raza = document.getElementById("input_raza").value;
+
+        let volume_cerc = Math.PI * Math.pow(raza, 2);
+        alert("Aria patratului este egal cu: "+volume_cerc.toFixed(2));
+    }
+    let button4=document.getElementById("input_button4");
+    button4.onclick=calculateVolume_cerc;
+ 
+</script>
+</body>
+</html>

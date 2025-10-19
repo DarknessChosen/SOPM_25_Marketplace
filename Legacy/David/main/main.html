@@ -1,0 +1,96 @@
+<html>
+
+<head>
+  <title>The Shadow's Dojo</title>
+  <link href="main.css" rel="stylesheet" />
+</head>
+
+<!--Navbars, tre' sa fie pe fiecare site gen-->
+
+<body>
+  <nav class="navbar">
+      <button onclick="toggleMenu()" class="burger"></button>
+      <button class="button"><a class="home_link" href="main.html">Home</a></button>
+      <div class="dropdowns">
+          <div class="dropdown">
+              <button class="button">
+                  Weaponry
+                  <img src="chevron.svg" />
+              </button>
+              <div class="dropdown-menu">
+                  <button><a class="site_link" href="tanto.html">Tanto</a></button>
+                  <button><a class="site_link" href="katana.html">Katana</a></button>
+                  <button><a class="site_link" href="odachi.html">Odachi</a></button>
+                  <button><a class="site_link" href="sai.html">Sai</a></button>
+                  <button><a class="site_link" href="kgf.html">Knuckle Guard Knife</a></button>
+                  <button><a class="site_link" href="nunchucks.html">Nunchucks</a></button>
+                  <button><a class="site_link" href="chain.html">Weighted chain</a></button>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="button">
+                  Throwables
+                  <img src="chevron.svg" />
+              </button>
+              <div class="dropdown-menu">
+                  <button><a class="site_link" href="knives.html">Knives</a></button>
+                  <button><a class="site_link" href="stars.html">Stars</a></button>
+                  <button><a class="site_link" href="axes.html">Axes</a></button>
+                  <button><a class="site_link" href="gun.html">Blowgun</a></button>
+                  <button><a class="site_link" href="caltrops.html">Caltrops</a></button>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="button">
+                  Gear
+                  <img src="chevron.svg" />
+              </button>
+              <div class="dropdown-menu">
+                  <button><a class="site_link" href="armor.html">Body armor</a></button>
+                  <button><a class="site_link" href="grappling.html">Grappling hook</a></button>
+                  <button><a class="site_link" href="claws.html">Climbing claws</a></button>
+                  <button><a class="site_link" href="belt.html">Utility belt</a></button>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="button">
+                  Practice Equipment
+                  <img src="chevron.svg" />
+              </button>
+              <div class="dropdown-menu">
+                  <button><a class="site_link" href="tsai.html">Sai</a></button>
+                  <button><a class="site_link" href="tdaito.html">Daito</a></button>
+                  <button><a class="site_link" href="tnunchucks.html">Nunchucks</a></button>
+                  <button><a class="site_link" href="tgun.html">Blowgun</a></button>
+                  <button><a class="site_link" href="target.html">Target</a></button>
+                  <button><a class="site_link" href="books.html">Training books</a></button>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <script>
+      const toggleMenu = () => document.body.classList.toggle("open");
+  </script>
+
+  <!--Chestii definitorii pentru main ca na-->
+
+  <div class="main_container">
+    <img src="torii.jpg" style="width:100%;">
+    <h1 class="welcome">Welcome to the hood</h1>
+  </div>
+
+  <h2 class="culoare">Greetings, warrior</h2>
+
+  <p class="text_bro">We're glad to have you part of this community, since you made this far you already know why are we
+    known for within this community so just take your time choosing the right gear.</p>
+
+  <p class="text_bro">Finest cutlery, all freshly stand made with extreme precision by the best weaponsmiths in the
+    world...so you don't have to worry about your targets or any witnesses. We have much faith into our products and we
+    know that you won't get dissapointed buying any of our products because your mission and your objective is our main
+    priority, and if any of our products will ever fail, we're going to make it up for it.</p>
+
+  <p class="text_bro" style="text-align: center">Thank you for choosing our services and we'll be waiting to hear from
+    you again, happy hunt!</p>
+</body>
+
+</html>

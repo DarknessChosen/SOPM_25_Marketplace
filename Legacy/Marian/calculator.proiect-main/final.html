@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THANK YOU!</title>
+    </head>
+    <style>
+        html{
+            text-align:center;
+        }
+h1{
+    text-align:center;
+    font-family:cursive;
+    color: rgb(199, 80, 223);
+    text-shadow : 2px 2px 1px rgb(89, 30, 100);
+}
+li {
+    text-align:left;
+    font-family: cursive;
+    color: rgb(113, 245, 245);
+     
+}
+.new{
+    font-family:cursive;
+    text-align:left;
+    color: rgb(113, 245, 245);
+}
+.other{
+    font-family:cursive;
+    text-align: left;
+}
+#box{
+
+margin-top:30px;
+background: linear-gradient(to right, #00AAFF, #c976f0); 
+color:#ffffff;
+width:90%;
+height:210px;
+border:2px solid rgb(32, 1, 66);
+border-radius:3px;
+padding:10px;
+margin-left:5px;
+}
+</style>
+    <body background="mate.jpg">
+        <h1>Thank you!</h1>
+        <div id="box" class="">
+            <h2 id="txt"></h2>
+            </div>    
+    
+    <script>
+        var str=document.querySelector("#txt");
+        var txt="In ziua de astazi, tehnologia a avansat indeajuns de mult incat nu se mai fac calcule cu creionul pe hartie. Calculatorul reprezinta o unealta indispensabila matematicii din aceasta perioada. MULTUMIM!";
+        var txtlen=txt.length;
+        var pos=-1;
+        var t=setInterval(move,200);
+        function move(){
+        pos++;
+        str.innerHTML+=txt.charAt(pos);
+        if(pos==txtlen){
+        clearInterval(t);
+        str.innerHTML="";
+        }
+        }
+         </script>
+        <p id="name"></p>
+        <p class="new">Multumim pentru vizualizare!</p><br/>
+        <p class="new">Proiectul a fost facut de:</p>
+        <ul>
+         <li>Nechifor Cristina Claudia</li>
+         <li>Minzala Marian Teodor</li>
+         <li>Misica Cornel Ioan</li>
+         <li>Jipa Dragos</li>
+         <li>Moise Vasile</li>
+        </ul>
+        <p class="other">ETTI, GRUPA 4LF623</p><br/>
+            
+    </body>
+</html>
