@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<style>
+    .p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 0;
+        border-style: solid;
+        border-color: red;
+        border-bottom-width: 3px;
+        background-color: black;
+        height: 95px;
+    }
+    .lp{
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .albums{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .albums:hover{
+    color: rgb(122, 0, 0);
+    }
+    .dropdb{
+        transition: 0.3s;
+    }
+    .dropdb:hover{
+        transform: rotate(-180deg);
+    }
+    .albums:active{
+    color:white;
+    }
+    .features{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .features:hover{
+        color: rgb(122, 0, 0);
+    }
+    .features:active{
+        color: white;
+    }
+    .mp{
+        width: 450px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+    }
+    .logo{
+        width: 400px;
+        margin-top: 8px;
+        border-color: red;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 6;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 20px;
+        transition: 0.15s;
+    }
+    .logo:hover{
+        opacity: 0.7;
+    }
+    .logo:active{
+        opacity: 0.4;
+    }
+    .tanto{
+        width: 100px;
+        margin-top: 8px;
+        border-color: red;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 6;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 20px;
+        transition: 0.15s;
+    }
+    .el{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    min-width: 124px;
+    margin-top: 5px;
+    transition: 0.3s;
+    }
+    .el:hover{
+        color: rgb(122, 0, 0);
+    }
+    .el:active{
+        color:white;
+    }
+    .links{
+    font-family: Verdana;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 20px;
+    transition: 0.3s;
+    }
+    .links:hover{
+        color: rgb(122, 0, 0);
+    }
+    .links:active{
+        color:white;
+    }
+    .rp{
+        flex: 1;
+        display: flex;
+    }
+    .sb{
+        flex: 1;
+        height: 29,5px;
+        border-style: solid;
+        background-color: black;
+        color: red;
+        border-color: red;
+        font-family: Arial;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        box-shadow: inset 1px, 2px, 3px rgb(255, 255, 255);
+        min-width: 10px;
+        margin-left: 20px;
+        width: 0;
+    }
+    .sb::placeholder{
+        font-family: Arial;
+        margin-left: 5px;
+        padding-left: 10px;
+    }
+    .xo{
+        width: 36px;
+        height: 36px;
+        border-style: solid;
+        border-color: red;
+        margin-left: -2px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-right: 60px;
+        background-color: black;
+    }
+    .xo-img{
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        margin-right: 60px;
+        transition: 0.15s;
+    }
+    .xo-img:hover{
+        opacity: 0.7;
+    }
+    .xo-img:active{
+        opacity: 0.4
+    }
+    .lpa{
+        position: relative;
+        display: inline-block;
+    }
+    .albums-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .albums-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .albums-content a:hover{
+        opacity: 0.8;
+    }
+    .lpa:hover .albums-content {display: block;}
+    .lpf{
+        position: relative;
+        display: inline-block;
+    }
+    .lpf:hover .features-content {display: block;}
+    .features-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .features-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .features-content a:hover{
+        opacity: 0.8;
+    }
+    .lpl{
+        position: relative;
+        display: inline-block;
+    }
+    .lpl:hover .links-content {display: block;}
+    .links-content{
+        display: none;
+        position: absolute;
+        background-color: black;
+        color: red;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        border-radius: 5px;
+    }
+    .links-content a {
+        color: red;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .links-content a:hover{
+        opacity: 0.8;
+    }
+    .tw{
+        width: 100%;
+        background-color: red;
+    }
+    .mainpage{
+        animation-name: example;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+        z-index: 100;
+        width: 100%;
+        height: 90vh;
+    }
+    @keyframes example{
+        0% {background-image: url(images/background1.png);}
+        10% {background-image: url(images/background1.png);}
+        15% {background-image: url(images/background1.png);}
+        25% {background-image: url(images/background1.png);}
+        30% {background-image: url(images/background1.png);}
+        40% {background-image: url(images/background1.png);}
+        45% {background-image: url(images/background1.png);}
+        55% {background-image: url(images/background1.png);}
+        60% {background-image: url(images/background1.png);}
+        70% {background-image: url(images/background1.png);}
+        75% {background-image: url(images/background1.png);}
+        85% {background-image: url(images/background1.png);}
+        90% {background-image: url(images/background1.png);}
+        100% {background-image: url(images/background1.png);}
+    }
+    .trl{
+        height: 300px;
+        z-index: 0;
+    }
+    .kl{
+        width:0;
+    }
+    .dropdb{
+        align-items: center;
+        width: 20px;
+    }
+    .welcome{
+        font-family: Arial;
+        padding: 0;
+        padding-top: 100px;
+        margin-left: 25%;
+        color: red;
+        font-size: 50px;
+        animation-name: lift;
+        animation-duration: 3s;
+        font-weight: bold;
+        -webkit-text-stroke: 2px black;
+
+    }
+    @keyframes lift{
+        0%{
+            opacity: 0;
+            padding-top: 600px;
+        }
+        25%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        80%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        100%{
+            opacity: 1;
+            padding-top: 100px;
+        }
+    }
+    .text{
+        color: white;
+        font-size: 120%;
+        text-align: center;
+        line-height: 30px;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
+        padding-top: 50px;
+        border: 0;
+        font-weight: bold;
+        -webkit-text-stroke: 0.7px black;
+
+    }
+    @keyframes hov{
+        0%{
+            opacity: 0;
+            font-size: 1px;
+            line-height: 1px;
+        }
+        82%{
+            opacity: 0;
+            font-size: 30px;
+            line-height: 10px;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+<html>
+    <head>
+        <title>The Shadow's Dojo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="p">
+        <div class="header">
+            <div class="lp">
+                <div class="lpa">
+                    <a href="albums.html"><button class="albums">Weapons<img class="dropdb" src="images/ddbr.png"></button></a>
+                    <div class="albums-content">
+                        <a href="#">Tanto</a>
+                        <a href="#">Katana</a>
+                        <a href="#">Odachi</a>
+                        <a href="#">Sai</a>
+                        <a href="#">Knuckle Guard Knife</a>
+                        <a href="#">Nunchunks</a>
+                        <a href="#">Weighted Chain</a>
+                        <a href="#">More Soon...</a>
+                    </div>
+                </div>
+                <a href="Early-Life.html"><button class="el"> Contact Us</button></a>
+                <div class="lpl">
+                <button class="links">Find Us On<img class="dropdb" src="images/ddbr.png"></button>
+                    <div class="links-content">
+                        <a href="https://www.facebook.com/theweeknd" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/theweeknd/" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/TheWeeknd" target="_blank">X</a>
+                        <a href="https://www.youtube.com/user/TheWeekndVEVO" target="_blank">Youtube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mp">
+                <a href="Main Page.html"><img class="logo" src="images/mpi.png"></a>
+            </div>
+            <div class="rp">
+                <input class="sb" type="text" placeholder="Search">
+                <button class="xo">
+                    <img class="xo-img" src="images/search.png">
+                </button>
+            </div>
+        </div>
+        <div class="mainpage">
+            <div class="welcome">Tanto - Short, Sharp Japanese Blade.</div>
+            <div class="text">Tanto Knife with Large Fixed Blade - full tang construction provides superior control and greater pressure<br>
+            when cutting, slicing, stroking, chopping and other manipulations.<br>
+            Perfect Knife for every job that needs a fast, reliable and easy to hide weapon - your enemies won't even<br>
+            notice the cold steel blade of the knife until it's too late.<br>
+            Matte Finished 440C Stainless Steel - excellent balance of hardness and corrosion resistance ensures proper<br>
+            operation without sharpening. Provides razor sharp cutting performance and high durability, carefully crafted for professionals.<br>
+            Comes with Sheath - this solid and practical holder allows you to wear the knife on your belt. The<br>
+            multifunctional sheath is made of heavy duty nylon cordura fabric.<br>
+            Price: 200$
+            ><img class="tanto" src="images/tanto.png">
+            </div>
+        </div>
+    </body>
+</html>
