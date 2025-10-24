@@ -73,6 +73,12 @@
         transition: 0.2s;
         margin-bottom: 5px;
     }
+
+    .dropdb{
+        align-items: center;
+        width: 20px;
+    }
+
     .dropdb:hover{
         transform: rotate(-90deg);
         margin-bottom: 5px;
@@ -293,28 +299,68 @@
         width: 100%;
         background-color: #bfa36b;
     }
-    
-    .mainpage{
+
+    .product_page{
         animation-name: example;
         animation-duration: 100s;
         animation-iteration-count: infinite;
         z-index: 100;
         width: 100%;
-        height: 90vh;
+        min-height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-attachment: fixed;
     }
 
-    .tanto{
-        width: 100px;
-        margin-top: 8px;
-        border-color: #bfa36b;
+    .product_title{
+        font-family: Arial;
+        padding: 0;
+        padding-top: 100px;
+        margin-left: 25%;
+        color: #bfa36b;
+        font-size: 50px;
+        animation-name: lift;
+        animation-duration: 3s;
+        font-weight: bold;
+        -webkit-text-stroke: 2px black;
+
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+        gap: 40px;
+    }
+
+    .product_image {
+        width: 300px;
+        height: auto;
+        border: 6px solid #bfa36b;
         border-radius: 10px;
         cursor: pointer;
-        border: 6;
-        border-style: solid;
-        margin-top: 3px;
-        margin-left: 20px;
         transition: 0.15s;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
     }
+
+    .product_text{
+        color: white;
+        font-size: 120%;
+        text-align: left;
+        line-height: 30px;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
+        font-weight: bold;
+        -webkit-text-stroke: 0.7px black;
+        max-width: 600px;
+    }
+
     @keyframes example{
         0% {background-image: url(images/background1.png);}
         10% {background-image: url(images/background1.png);}
@@ -331,30 +377,7 @@
         90% {background-image: url(images/background1.png);}
         100% {background-image: url(images/background1.png);}
     }
-    .trl{
-        height: 300px;
-        z-index: 0;
-    }
-    .kl{
-        width:0;
-    }
-    .dropdb{
-        align-items: center;
-        width: 20px;
-    }
-    .welcome{
-        font-family: Arial;
-        padding: 0;
-        padding-top: 100px;
-        margin-left: 25%;
-        color: #bfa36b;
-        font-size: 50px;
-        animation-name: lift;
-        animation-duration: 3s;
-        font-weight: bold;
-        -webkit-text-stroke: 2px black;
 
-    }
     @keyframes lift{
         0%{
             opacity: 0;
@@ -373,20 +396,7 @@
             padding-top: 100px;
         }
     }
-    .text{
-        color: white;
-        font-size: 120%;
-        text-align: center;
-        line-height: 30px;
-        animation-name: hov;
-        animation-duration: 3s;
-        opacity: 1;
-        padding-top: 50px;
-        border: 0;
-        font-weight: bold;
-        -webkit-text-stroke: 0.7px black;
 
-    }
     @keyframes hov{
         0%{
             opacity: 0;
@@ -402,7 +412,19 @@
             opacity: 1;
         }
     }
+
+    .trl{
+        height: 300px;
+        z-index: 0;
+    }
+
+    .kl{
+        width:0;
+    }
+
 </style>
+
+
 <html>
     <head>
         <title>Tanto</title>
@@ -443,9 +465,11 @@
                 </button>
             </div>
         </div>
-        <div class="mainpage">
-            <div class="welcome">Tanto - Short, Sharp Japanese Blade.</div>
-            <div class="text">Tanto Knife with Large Fixed Blade - full tang construction provides superior control and greater pressure<br>
+        <div class="product_page">
+            <div class="product_title">Tanto - Short, Sharp Japanese Blade.</div>
+            <div class="content-container">
+                <img class="product_image" src="images/tanto.png">
+                <div class="product_text">Tanto Knife with Large Fixed Blade - full tang construction provides superior control and greater pressure<br>
             when cutting, slicing, stroking, chopping and other manipulations.<br>
             Perfect Knife for every job that needs a fast, reliable and easy to hide weapon - your enemies won't even<br>
             notice the cold steel blade of the knife until it's too late.<br>
@@ -454,7 +478,7 @@
             Comes with Sheath - this solid and practical holder allows you to wear the knife on your belt. The<br>
             multifunctional sheath is made of heavy duty nylon cordura fabric.<br>
             Price: 200$
-            ><img class="tanto" src="images/tanto.png">
+                </div>
             </div>
         </div>
     </body>
