@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Shadow's Dojo</title>
+  <title>Osaka Continental</title>
   <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="./Assets/osaka-continental-logo.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="login-card">
@@ -85,8 +86,8 @@
       form.addEventListener("submit", (ev) => {
         ev.preventDefault();
         if (password.value === ACCESS_CODE) {
-          // din Login/ spre Tanto (demo)
-          window.location.href = "../Tanto/tanto.html";
+          // din Login/ spre Main
+          window.location.href = "../Main/main.html";
         } else {
           openModal(ejectModal);
         }

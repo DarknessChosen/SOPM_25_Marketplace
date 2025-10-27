@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<style>
+    /* Setarile principale ale paginii */
+    .page{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Bara de navigatie */
+    .navigation_bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 0;
+        border-style: solid;
+        border-color: #bfa36b;
+        border-bottom-width: 4px;
+        background-image: url('images/nbb.png');
+        height: 120px;
+    }
+
+    /* Partea din stanga a barii de navigatie care include butoanele */
+    .buttons{
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .lpa{
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Meniul de arme */
+    .weapons{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 23px;
+    background-color: #061412;
+    color: #ffbc37;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 55%);
+    border-color: #ffbc37;
+    border-radius: 10px;
+    margin-top: 2px;
+    transition: 0.2s;
+    margin-bottom: 2px;
+    }
+
+    /* Meniul de arme, atunci cand cursorul este tinut pe acesta */
+    .weapons:hover{
+    color: rgb(255, 224, 161);
+    }
+
+    .weapons:hover .dropdb{
+        transform: rotate(-90deg);
+        margin-bottom: 5px;
+    }
+
+    /* Meniul de arme, atunci cand se da click pe acesta */
+    .weapons:active{
+    color:red;
+
+    /* Sageata butonului droopdown */
+    }
+    .dropdb{
+        transition: 0.2s;
+        margin-bottom: 5px;
+    }
+
+    .dropdb{
+        align-items: center;
+        width: 20px;
+    }
+
+    .dropdb:hover{
+        transform: rotate(-90deg);
+        margin-bottom: 5px;
+
+    }
+
+    /* Lista de arme */
+    .weapons-content{
+        display: none;
+        position: absolute;
+        background-color: #061412;
+        color: #ffbc37;
+        min-width: 160px;
+        margin-left: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #ffbc37;
+        border-radius: 5px;
+    }
+    .weapons-content a {
+        color: #ffbc37;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .weapons-content a:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    /* Afisare lista de arme */
+    .lpa:hover .weapons-content {display: block;}
+
+    /* Butonul pentru contacte */
+    .contact{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 23px;
+    background-color: #061412;
+    color: #ffbc37;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: #ffbc37;
+    border-radius: 10px;
+    min-width: 124px;
+    margin-top: 2px;
+    transition: 0.2s;
+    }
+
+    .contact:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    .contact:active{
+        color:red;
+    }
+
+    /* Meniul de link-uri */
+    .links{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 23px;
+    background-color: #061412;
+    color: #ffbc37;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+    border-color: #ffbc37;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-right: 20px;
+    transition: 0.2s;
+    }
+
+    .links:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    .links:active{
+        color:red;
+    }
+
+    .links:hover .dropdb{
+        transform: rotate(-90deg);
+        margin-bottom: 5px;
+    }
+
+    /* Lista cu link-uri */
+    .links-content{
+        display: none;
+        position: absolute;
+        background-color: #061412;
+        color: #ffbc37;
+        min-width: 160px;
+        margin-left: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #ffbc37;
+        border-radius: 5px;
+    }
+
+    .links-content a {
+        color: #ffbc37;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+
+    .links-content a:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    .lpl{
+        position: relative;
+        display: inline-block;
+    }
+
+    .lpl:hover .links-content {display: block;}
+
+    /* Butonul catre pagina principala */
+    .main_page{
+        width: 450px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+    }
+
+    .logo{
+        width: 400px;
+        height: 100px;
+        margin-top: 8px;
+        border-color: #ffbc37;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 6;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 20px;
+        transition: 0.2s;
+    }
+
+    .logo:hover{
+        opacity: 0.7;
+    }
+
+    .logo:active{
+        opacity: 0.4;
+    }
+
+    /* Casuta de cautare */
+    .search{
+        flex: 1;
+        display: flex;
+    }
+
+    .search_bar{
+        flex: 1;
+        height: 29,5px;
+        border-style: solid;
+        background-color: #061412;
+        color: #ffbc37;
+        border-color: #ffbc37;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        box-shadow: inset 1px, 2px, 3px rgb(255, 255, 255);
+        min-width: 10px;
+        margin-left: 20px;
+        width: 0;
+    }
+
+    .search_bar::placeholder{
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        margin-left: 5px;
+        padding-left: 10px;
+    }
+
+    .search_button{
+        width: 36px;
+        height: 36px;
+        border-style: solid;
+        border-color: #bfa36b;
+        margin-left: -2px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-right: 60px;
+        background-color: black;
+    }
+
+    .search_button_img{
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        margin-right: 60px;
+        transition: 0.15s;
+    }
+
+    .search_button_img:hover{
+        opacity: 0.7;
+    }
+
+    .search_button_img:active{
+        opacity: 0.4
+    }
+
+    .tw{
+        width: 100%;
+        background-color: #bfa36b;
+    }
+
+    .product_page{
+        animation-name: example;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+        z-index: 100;
+        width: 100%;
+        min-height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .product_title{
+        font-family: Arial;
+        padding: 0;
+        padding-top: 100px;
+        color: #bfa36b;
+        font-size: 50px;
+        animation-name: lift;
+        animation-duration: 3s;
+        font-weight: bold;
+        -webkit-text-stroke: 2px black;
+        text-align: center;
+
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+        gap: 40px;
+    }
+
+    .product_image {
+        width: 300px;
+        height: auto;
+        border: 6px solid #bfa36b;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.15s;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
+    }
+
+    .product_text{
+        color: white;
+        font-size: 120%;
+        text-align: left;
+        line-height: 30px;
+        animation-name: hov;
+        animation-duration: 3s;
+        opacity: 1;
+        font-weight: bold;
+        -webkit-text-stroke: 0.7px black;
+        max-width: 600px;
+    }
+
+    @keyframes example{
+        0% {background-image: url(images/background.png);}
+        10% {background-image: url(images/background.png);}
+        15% {background-image: url(images/background.png);}
+        25% {background-image: url(images/background.png);}
+        30% {background-image: url(images/background.png);}
+        40% {background-image: url(images/background.png);}
+        45% {background-image: url(images/background.png);}
+        55% {background-image: url(images/background.png);}
+        60% {background-image: url(images/background.png);}
+        70% {background-image: url(images/background.png);}
+        75% {background-image: url(images/background.png);}
+        85% {background-image: url(images/background.png);}
+        90% {background-image: url(images/background.png);}
+        100% {background-image: url(images/background.png);}
+    }
+
+    @keyframes lift{
+        0%{
+            opacity: 0;
+            padding-top: 600px;
+        }
+        25%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        80%{
+            opacity: 1;
+            padding-top: 300px;
+        }
+        100%{
+            opacity: 1;
+            padding-top: 100px;
+        }
+    }
+
+    @keyframes hov{
+        0%{
+            opacity: 0;
+            font-size: 1px;
+            line-height: 1px;
+        }
+        82%{
+            opacity: 0;
+            font-size: 30px;
+            line-height: 10px;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .trl{
+        height: 300px;
+        z-index: 0;
+    }
+
+    .kl{
+        width:0;
+    }
+
+</style>
+
+
+<html>
+    <head>
+        <title>More Soon...</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="page">
+        <div class="navigation_bar">
+            <div class="buttons">
+                <div class="lpa">
+                    <a href="albums.html"><button class="weapons">Weapons<img class="dropdb" src="images/ddb.png"></button></a>
+                    <div class="weapons-content">
+                        <a href="tanto.html">Tanto</a>
+                        <a href="katana.html">Katana</a>
+                        <a href="odachi.html">Odachi</a>
+                        <a href="sai.html">Sai</a>
+                        <a href="knuckle.html">Knuckle Guard Knife</a>
+                        <a href="nunchunks.html">Nunchunks</a>
+                        <a href="chain.html">Weighted Chain</a>
+                        <a href="more_soon.html">More Soon...</a>
+                    </div>
+                </div>
+                <a href="../Contact/contact.html"><button class="contact"> Contact Us</button></a>
+                <div class="lpl">
+                <button class="links">Find Us On<img class="dropdb" src="images/ddb.png"></button>
+                    <div class="links-content">
+                        <a href="https://icosaka.com/en/" target="_blank">Official Website</a>
+                        <a href="https://www.booking.com/hotel/jp/intercontinental-osaka.ro.html?aid=356980&label=gog235jc-10CAsodUIWaW50ZXJjb250aW5lbnRhbC1vc2FrYUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AtGF3scGwAIB0gIkNDRmOWE3ZjYtOGNlNy00YzhkLTk0MTktZGIzNDk5MDI5MWJk2AIB4AIB&sid=747695e2c2cebc5744d4ddef753c6053&dest_id=-240905&dest_type=city&dist=0&group_adults=12&group_children=0&hapos=1&hpos=1&no_rooms=6&req_adults=12&req_children=0&room1=A%2CA&room2=A%2CA&room3=A%2CA&room4=A%2CA&room5=A%2CA&room6=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1761051353&srpvid=d5965ae938660d0f&type=total&ucfs=1&" target="_blank">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="main_page">
+                <a href="../Main/main.html"><img class="logo" src="images/mpi.png"></a>
+            </div>
+            <div class="search">
+                <input class="search_bar" type="text" placeholder="Search">
+                <button class="search_button">
+                    <img class="search_button_img" src="images/sb.png">
+                </button>
+            </div>
+        </div>
+        <div class="product_page">
+            <div class="product_title">More to be added.</div>
+            <div class="content-container">
+                <img class="product_image" src="images/easteregg.png">
+                <div class="product_text">More weapons and items to be added very soon. Make sure to book a room to our complex, and watch John Wick too.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

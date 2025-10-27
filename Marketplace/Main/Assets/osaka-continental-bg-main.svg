@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="midnight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0c12"/>
+      <stop offset="70%" stop-color="#07090e"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+
+    <!-- Asanoha pattern -->
+    <pattern id="asanoha" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g stroke="#1b1f2a" stroke-width="1.2" fill="none" opacity="0.8">
+        <path d="M40 0 L20 40 L40 80 L60 40 Z"/>
+        <path d="M0 40 L40 20 L80 40 L40 60 Z"/>
+        <path d="M40 0 L40 80 M0 40 L80 40 M12 12 L68 68 M68 12 L12 68"/>
+      </g>
+      <g stroke="#151a24" stroke-width="1" fill="none" opacity="0.8">
+        <path d="M40 10 L25 40 L40 70 L55 40 Z"/>
+        <path d="M10 40 L40 25 L70 40 L40 55 Z"/>
+      </g>
+    </pattern>
+
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a86a"/>
+      <stop offset="50%" stop-color="#b6904f"/>
+      <stop offset="100%" stop-color="#a57f3f"/>
+    </linearGradient>
+    <linearGradient id="jade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#48c1a7"/>
+      <stop offset="100%" stop-color="#2e8c77"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="13"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.028"/>
+      </feComponentTransfer>
+    </filter>
+
+    <mask id="ringMask">
+      <rect width="100%" height="100%" fill="white"/>
+      <circle cx="960" cy="540" r="310" fill="black"/>
+      <circle cx="960" cy="540" r="270" fill="white"/>
+    </mask>
+  </defs>
+
+  <!-- base -->
+  <rect width="100%" height="100%" fill="url(#midnight)"/>
+
+  <!-- geometric pattern -->
+  <rect width="100%" height="100%" fill="url(#asanoha)" opacity="0.16"/>
+
+  <!-- diagonal gold + jade sash (no side rails) -->
+  <g transform="rotate(-6, 960, 540)" opacity="0.33" filter="url(#softGlow)">
+    <rect x="-200" y="480" width="2320" height="40" fill="url(#gold)"/>
+    <rect x="-200" y="530" width="2320" height="10" fill="url(#jade)" opacity="0.9"/>
+  </g>
+
+  <!-- central faint ring -->
+  <g mask="url(#ringMask)" opacity="0.26" filter="url(#softGlow)">
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#gold)"/>
+  </g>
+
+  <!-- grain overlay -->
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+</svg>

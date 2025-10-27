@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osaka Continental</title>
+  <link rel="icon" href="./Assets/osaka-continental-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body class="page">
+  <!-- NAVIGATION BAR -->
+  <div class="navigation_bar">
+    <!-- stânga: Weapons + Contact + Links -->
+    <div class="buttons">
+      <div class="lpa">
+        <button class="weapons">
+          Weapons
+          <img class="dropdb" src="./Assets/dropdown-jade-gold.svg" alt="▼">
+        </button>
+        <div class="weapons-content">
+          <a href="../Tanto/tanto.html">Tanto</a>
+          <a href="../Katana/katana.html">Katana</a>
+          <a href="../Odachi/odachi.html">Odachi</a>
+          <a href="../Sai/sai.html">Sai</a>
+          <a href="../Knuckle/knuckle.html">Knuckle Guard Knife</a>
+          <a href="../Nunchucks/nunchucks.html">Nunchucks</a>
+          <a href="../Chain/chain.html">Weighted Chain</a>
+          <a href="../More/more_soon.html">More Soon...</a>
+        </div>
+      </div>
+
+      <a href="../Contact/contact.html"><button class="contact">Contact Us</button></a>
+
+      <div class="lpl">
+        <button class="links">
+          Find Us On
+          <img class="dropdb" src="./Assets/dropdown-jade-gold.svg" alt="▼">
+        </button>
+        <div class="links-content">
+          <a href="https://icosaka.com/en/" target="_blank" rel="noopener">Official Website</a>
+          <a href="https://www.booking.com/hotel/jp/intercontinental-osaka.ro.html" target="_blank" rel="noopener">Booking</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- mijloc: logo → Main -->
+    <div class="main_page">
+      <a href="./main.html" aria-label="Back to Main">
+        <img class="logo" src="./Assets/osaka-navbar-logo.svg" alt="Osaka Continental emblem">
+      </a>
+    </div>
+
+    <!-- dreapta: Search -->
+    <div class="search" role="search">
+      <input class="search_bar" type="search" placeholder="Search weapons, categories..." aria-label="Search" />
+      <button class="search_button" aria-label="Search">
+        <img class="search_button_img" src="./Assets/search-jade-gold.svg" alt="">
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO / WELCOME -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="sigil">Osaka Continental</p>
+      <h1>Welcome to the Armory</h1>
+      <p class="subtitle">Discretion. Precision. Favors honored in steel and jade.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../Products/tanto.html">Explore Tanto</a>
+        <a class="btn btn-ghost" href="../Products/katana.html">Browse Katana</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURED GRID -->
+  <main class="content">
+    <h2 class="section-title">Osaka's Finest</h2>
+    <div class="grid">
+      <a class="card" href="../Products/tanto.html">
+        <img src="./Assets/tanto.png" alt="Tanto blade" />
+        <div class="card-body">
+          <h3>Tanto</h3>
+          <p>Short, sharp, ceremonial precision.</p>
+        </div>
+      </a>
+
+      <a class="card" href="../Products/katana.html">
+        <img src="./Assets/katana.png" alt="Katana blade" />
+        <div class="card-body">
+          <h3>Katana</h3>
+          <p>Tradition tempered for modern vows.</p>
+        </div>
+      </a>
+
+      <a class="card" href="../Products/odachi.html">
+        <img src="./Assets/odachi.png" alt="Odachi blade" />
+        <div class="card-body">
+          <h3>Odachi</h3>
+          <p>Reach of the ancients. Weight of honor.</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>© Osaka Continental Armory — For members of good standing.</p>
+  </footer>
+</body>
+</html>
