@@ -16,7 +16,7 @@ Ideea: să recreăm ideea unui site dîn acest univers unde comunitatea Continen
 1. Copiază folderul proiectului `Marketplace/` în `C:\xampp\htdocs\`.
 2. Pornește **Apache** din XAMPP.
 3. Deschide în browser:
-   - `http://localhost:8081/Marketplace/Login/login.html`  
+   - `http://localhost/Marketplace/Login/login.html`  
 4. Din Login, vei fi direcționat către pagina **Main**
 
 ## 🗺️ Roadmap & task-uri
@@ -31,14 +31,14 @@ To do:
 ✔ - done
 ⏱️ - Working on
 ✘ - undone
-- [⏱️] Login final + mesaj tematic „turn back”
-- [✘] Main cu listă de articole
-- [⏱️] Pagini produs (Tanto, Katana) cu imagini și descriere
-- [✘] Contact (formular simplu)
-- [✘] Cumpărare (layout + sumar comandă)
-- [✘] Finisaje vizuale (culori, butoane, modale)
+- [✔] Login final + mesaj tematic „turn back”
+- [✔] Main cu listă de articole
+- [✔] Pagini produse (Tanto, Katana) cu imagini și descriere
+- [⏱️] Contact (formular simplu)
+- [⏱️] Cumpărare (layout + sumar comandă)
+- [✔] Finisaje vizuale (culori, butoane, modale)
 
 ## 👥 Echipa
-- Student: **Ionita David-Theodor**, **Grecea Madalin**, **Manzala Marian**,
+- Student: **Ionita David-Theodor**, **Grecea Madalin**, **Minzala Marian**,
 
 > Notă: proiectul este unul **educațional**; tematica este estetică/narativă, fără funcționalități reale de comerț.
