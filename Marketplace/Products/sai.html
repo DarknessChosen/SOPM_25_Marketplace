@@ -361,6 +361,31 @@
         max-width: 600px;
     }
 
+    .buy_button {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        font-size: 23px;
+        background-color: #ffbc37;
+        color: #061412;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+        border: 2px solid #061412;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    .buy_button:hover {
+        background-color: rgb(255, 224, 161);
+        color: black;
+    }
+
+    .buy_button:active {
+        background-color: red;
+        color: white;
+    }
+
     @keyframes example{
         0% {background-image: url(images/background.png);}
         10% {background-image: url(images/background.png);}
@@ -477,8 +502,11 @@
                     Sai were often used in pairs, with a third sometimes carried as a backup. 
                     Originating from Okinawan martial arts, the sai became a symbol of discipline, 
                     control, and precision within kobudō and modern martial arts practice.
-            <br>
-            Price: 400$
+                    <br>
+                    Price: 400$
+                    <br>
+                    <br>
+                    <a href="../Billing/billing.html"><button class="buy_button">Buy Now</button></a>
                 </div>
             </div>
         </div>
