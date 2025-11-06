@@ -34,8 +34,8 @@ To do:
 - [✔] Login final + mesaj tematic „turn back”
 - [✔] Main cu listă de articole
 - [✔] Pagini produse (Tanto, Katana) cu imagini și descriere
-- [⏱️] Contact (formular simplu)
-- [⏱️] Cumpărare (layout + sumar comandă)
+- [✔] Contact (formular simplu)
+- [✔] Cumpărare (layout + sumar comandă)
 - [✔] Finisaje vizuale (culori, butoane, modale)
 
 ## 👥 Echipa
