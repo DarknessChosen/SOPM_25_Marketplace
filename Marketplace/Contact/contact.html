@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+    /* ======= Navbar ======= */
+    .page{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .navigation_bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid #bfa36b;
+        background-image: url('images/nbb.png');
+        height: 120px;
+    }
+
+    .buttons{
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .lpa, .lpl{
+        position: relative;
+        display: inline-block;
+    }
+
+    .weapons, .contact, .links{
+        font-size: 23px;
+        background-color: #061412;
+        color: #ffbc37;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        border: 2px solid #ffbc37;
+        border-radius: 10px;
+        transition: 0.2s;
+        font-family: inherit;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+    }
+
+    .weapons:hover, .contact:hover, .links:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    .weapons:active, .contact:active, .links:active{
+        color:red;
+    }
+
+    .dropdb{
+        width: 20px;
+        margin-left: 5px;
+        transition: 0.2s;
+    }
+
+    .weapons:hover .dropdb, .links:hover .dropdb{
+        transform: rotate(-90deg);
+    }
+
+    .weapons-content, .links-content{
+        display: none;
+        position: absolute;
+        background-color: #061412;
+        color: #ffbc37;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        border: 2px solid #ffbc37;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .weapons-content a, .links-content a{
+        color: #ffbc37;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+
+    .weapons-content a:hover, .links-content a:hover{
+        color: rgb(255, 224, 161);
+    }
+
+    .lpa:hover .weapons-content, .lpl:hover .links-content{
+        display: block;
+    }
+
+    .main_page{
+        width: 450px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+    }
+
+    .logo{
+        width: 400px;
+        height: 100px;
+        border: 6px solid #ffbc37;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: 0.2s;
+    }
+
+    .logo:hover{ opacity: 0.7; }
+    .logo:active{ opacity: 0.4; }
+
+    .search{
+        flex: 1;
+        display: flex;
+    }
+
+    .search_bar{
+        flex: 1;
+        border: 2px solid #ffbc37;
+        background-color: #061412;
+        color: #ffbc37;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    .search_button{
+        width: 36px;
+        height: 36px;
+        border: 2px solid #bfa36b;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-left: -2px;
+        background-color: black;
+        margin-right: 60px;
+    }
+
+    .search_button_img{
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        transition: 0.15s;
+    }
+
+    .search_button_img:hover{ opacity: 0.7; }
+    .search_button_img:active{ opacity: 0.4; }
+
+    /* ======= Contact Page ======= */
+    body {
+        margin: 0;
+        background-color: black;
+        background-image: url('images/back.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #ffbc37;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .contact_container {
+        max-width: 700px;
+        margin: 80px auto;
+        background-color: rgba(6, 20, 18, 0.92);
+        border: 3px solid #bfa36b;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 20px #bfa36b;
+        animation: fadein 1s ease;
+    }
+
+    .contact_container h1 {
+        text-align: center;
+        color: #ffbc37;
+        -webkit-text-stroke: 1px black;
+        margin-top: 0;
+    }
+
+    .contact_form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #ffbc37;
+    }
+
+    input, textarea {
+        padding: 10px;
+        border-radius: 7px;
+        border: 2px solid #ffbc37;
+        background-color: #061412;
+        color: #ffbc37;
+        font-size: 16px;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .submit_btn {
+        background-color: #ffbc37;
+        color: #061412;
+        padding: 12px;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .submit_btn:hover { background-color: rgb(255, 224, 161); color: black; }
+    .submit_btn:active { background-color: red; color: white; }
+
+    @media (max-width: 880px) {
+        .main_page .logo{ width: 260px; height: 60px; }
+    }
+
+    @keyframes fadein {
+        from {opacity: 0; transform: translateY(30px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    </style>
+</head>
+
+<body class="page">
+    <!-- ======= Navbar ======= -->
+    <div class="navigation_bar">
+        <div class="buttons">
+            <div class="lpa">
+                <button class="weapons">Weapons<img class="dropdb" src="images/ddb.png"></button>
+                <div class="weapons-content">
+                    <a href="../Weapons/tanto.html">Tanto</a>
+                    <a href="../Weapons/katana.html">Katana</a>
+                    <a href="../Weapons/odachi.html">Odachi</a>
+                    <a href="../Weapons/sai.html">Sai</a>
+                    <a href="../Weapons/knuckle.html">Knuckle Guard Knife</a>
+                    <a href="../Weapons/nunchuks.html">Nunchuks</a>
+                    <a href="../Weapons/chain.html">Weighted Chain</a>
+                </div>
+            </div>
+            <a href="contacts.html"><button class="contact">Contact Us</button></a>
+            <div class="lpl">
+                <button class="links">Find Us On<img class="dropdb" src="images/ddb.png"></button>
+                <div class="links-content">
+                    <a href="https://icosaka.com/en/" target="_blank">Official Website</a>
+                    <a href="https://www.booking.com/" target="_blank">Booking</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_page">
+            <a href="../Main/main.html"><img class="logo" src="images/mpi.png" alt="Logo"></a>
+        </div>
+
+        <div class="search">
+            <input class="search_bar" type="text" placeholder="Search">
+            <button class="search_button">
+                <img class="search_button_img" src="images/sb.png" alt="Search">
+            </button>
+        </div>
+    </div>
+
+    <!-- ======= Contact Content ======= -->
+    <div class="contact_container">
+        <h1>Contact Us</h1>
+        <form class="contact_form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Your message here..." required></textarea>
+
+            <button type="submit" class="submit_btn">Send Message</button>
+        </form>
+    </div>
+
+<script>
+// Simplu alert la trimitere
+document.querySelector('.contact_form').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thank you for contacting us! We will respond soon.');
+    e.target.reset();
+});
+</script>
+
+</body>
+</html>
