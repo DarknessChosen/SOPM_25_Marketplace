@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+    /* ======= Stil general ======= */
+    .page {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    /* ======= Bara de navigatie ======= */
+    .navigation_bar {
+        display: flex;
+        justify-content: space-between; /* spațiu între logo, butoane și search */
+        align-items: center;
+        border-bottom: 4px solid #bfa36b;
+        background-image: url('images/nbb.png'); /* imagine fundal navbar */
+        height: 120px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 550px; /* lățimea zonei de butoane */
+    }
+
+    /* Container dropdown */
+    .lpa, .lpl {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Butoane principale din navbar */
+    .weapons, .contact, .links {
+        font-size: 23px;
+        background-color: #061412;
+        color: #ffbc37;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        border: 2px solid #ffbc37;
+        border-radius: 10px;
+        transition: 0.2s;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+    }
+
+    /* Hover / Active efecte */
+    .weapons:hover, .contact:hover, .links:hover { color: rgb(255, 224, 161); }
+    .weapons:active, .contact:active, .links:active { color: red; }
+
+    /* Săgeata dropdown */
+    .dropdb {
+        width: 20px;
+        margin-left: 5px;
+        transition: 0.2s;
+    }
+    .weapons:hover .dropdb, .links:hover .dropdb {
+        transform: rotate(-90deg); /* animatie săgeată */
+    }
+
+    /* Dropdown content */
+    .weapons-content, .links-content {
+        display: none; /* ascuns implicit */
+        position: absolute;
+        background-color: #061412;
+        color: #ffbc37;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        border: 2px solid #ffbc37;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .weapons-content a, .links-content a {
+        color: #ffbc37;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        transition: 0.15s;
+    }
+    .weapons-content a:hover, .links-content a:hover { color: rgb(255, 224, 161); }
+
+    /* Afisare dropdown la hover */
+    .lpa:hover .weapons-content, .lpl:hover .links-content { display: block; }
+
+    /* Logo navbar */
+    .main_page {
+        display: flex;
+        align-items: center;
+        width: 450px;
+        height: 100px;
+    }
+    .logo {
+        width: 400px;
+        height: 100px;
+        border: 6px solid #ffbc37;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: 0.2s;
+    }
+    .logo:hover { opacity: 0.7; }
+    .logo:active { opacity: 0.4; }
+
+    /* Search bar navbar */
+    .search { display: flex; flex: 1; }
+    .search_bar {
+        flex: 1;
+        border: 2px solid #ffbc37;
+        background-color: #061412;
+        color: #ffbc37;
+        border-radius: 5px;
+        font-size: 17px;
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+    .search_button {
+        width: 36px;
+        height: 36px;
+        border: 2px solid #bfa36b;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-left: -2px;
+        background-color: black;
+        margin-right: 60px;
+    }
+    .search_button_img {
+        height: 32.5px;
+        margin-top: -1px;
+        margin-left: -6.5px;
+        object-fit: contain;
+        border-radius: 5px;
+        transition: 0.15s;
+    }
+    .search_button_img:hover { opacity: 0.7; }
+    .search_button_img:active { opacity: 0.4; }
+
+    /* ======= Pagina Billing ======= */
+    body {
+        margin: 0;
+        background-color: black;
+        background-image: url('images/back.jpg'); /* imagine fundal */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #ffbc37;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .billing_container {
+        max-width: 800px;
+        margin: 80px auto; /* centrat pe pagina */
+        background-color: rgba(6, 20, 18, 0.92); /* semi-transparent */
+        border: 3px solid #bfa36b;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 20px #bfa36b;
+        animation: fadein 1s ease; /* animatie de intrare */
+    }
+
+    .billing_container h1 {
+        text-align: center;
+        color: #ffbc37;
+        -webkit-text-stroke: 1px black; /* contur text */
+        margin-top: 0;
+    }
+
+    .billing_layout {
+        display: grid;
+        grid-template-columns: 1fr 320px; /* stanga: form, dreapta: cart */
+        gap: 20px;
+        align-items: start;
+    }
+
+    .left_panel { display: flex; flex-direction: column; gap: 12px; }
+
+    .billing_form { display: flex; flex-direction: column; gap: 14px; }
+
+    label {
+        font-weight: bold;
+        color: #ffbc37;
+    }
+    input, select {
+        padding: 10px;
+        border-radius: 7px;
+        border: 2px solid #ffbc37;
+        background-color: #061412;
+        color: #ffbc37;
+        font-size: 16px;
+    }
+
+    /* Butoane formular */
+    .submit_btn {
+        background-color: #ffbc37;
+        color: #061412;
+        padding: 12px;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .submit_btn:hover { background-color: rgb(255, 224, 161); color: black; }
+    .submit_btn:active { background-color: red; color: white; }
+
+    /* Sidebar cart */
+    .sidebar {
+        background-color: rgba(11, 28, 26, 0.5);
+        border: 2px solid #bfa36b;
+        border-radius: 10px;
+        padding: 12px;
+    }
+    .summary h3 { margin: 8px 0; color: #ffbc37; }
+    .summary ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 260px;
+        overflow: auto;
+    }
+    .summary li {
+        padding: 8px;
+        border-bottom: 1px solid rgba(191,163,107,0.08);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .summary li .remove-btn {
+        background: transparent;
+        border: 1px solid #ffbc37;
+        color:#ffbc37;
+        padding:4px 8px;
+        border-radius:6px;
+        cursor:pointer;
+        font-size:13px;
+    }
+    .summary li .remove-btn:hover { background:#ffbc37; color:#061412; }
+
+    /* Preview produs */
+    .preview {
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(255,188,55,0.06);
+        border: 1px solid rgba(191,163,107,0.12);
+    }
+    .preview .title { font-weight: bold; color:#ffbc37; }
+    .preview .price { font-weight: bold; color:#ffbc37; margin-top:6px; }
+
+    .small_btn {
+        display:inline-block;
+        margin-top:8px;
+        padding:8px 10px;
+        border-radius:8px;
+        background:#061412;
+        color:#ffbc37;
+        border:2px solid #ffbc37;
+        cursor:pointer;
+        text-decoration:none;
+    }
+    .small_btn:hover { background: #ffbc37; color:#061412; }
+
+    .total_row { margin-top:12px; font-weight:bold; color:#ffbc37; text-align:right; }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+        .billing_layout { grid-template-columns: 1fr; }
+        .main_page .logo{ width: 260px; height: 60px; }
+    }
+
+    /* Animatie intrare */
+    @keyframes fadein {
+        from {opacity: 0; transform: translateY(30px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    </style>
+</head>
+
+<body class="page">
+    <!-- Navbar -->
+    <div class="navigation_bar">
+        <div class="buttons">
+            <div class="lpa">
+                <button class="weapons">Weapons<img class="dropdb" src="images/ddb.png"></button>
+                <div class="weapons-content">
+                    <a href="../Weapons/tanto.html">Tanto</a>
+                    <a href="../Weapons/katana.html">Katana</a>
+                    <a href="../Weapons/odachi.html">Odachi</a>
+                    <a href="../Weapons/sai.html">Sai</a>
+                    <a href="../Weapons/knuckle.html">Knuckle Guard Knife</a>
+                    <a href="../Weapons/nunchuks.html">Nunchuks</a>
+                    <a href="../Weapons/chain.html">Weighted Chain</a>
+                </div>
+            </div>
+
+            <a href="./contacts.html"><button class="contact">Contact Us</button></a>
+
+            <div class="lpl">
+                <button class="links">Find Us On<img class="dropdb" src="images/ddb.png"></button>
+                <div class="links-content">
+                    <a href="https://icosaka.com/en/" target="_blank">Official Website</a>
+                    <a href="https://www.booking.com/" target="_blank">Booking</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="main_page">
+            <a href="../Main/main.html"><img class="logo" src="images/mpi.png" alt="Logo"></a>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+            <input class="search_bar" type="text" placeholder="Search">
+            <button class="search_button">
+                <img class="search_button_img" src="images/sb.png" alt="Search">
+            </button>
+        </div>
+    </div>
+
+    <!-- Billing Content -->
+    <div class="billing_container">
+        <h1>Billing Information</h1>
+
+        <div class="billing_layout">
+            <!-- Form -->
+            <div class="left_panel">
+                <form class="billing_form">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="Enter your address" required>
+
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" required>
+                        <option value="">Select Method</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="crypto">Crypto</option>
+                    </select>
+
+                    <div style="display:flex; gap:10px; margin-top:8px;">
+                        <button type="submit" class="submit_btn">Confirm Purchase</button>
+                        <button type="button" id="clear_cart" class="submit_btn" style="background:#061412;color:#ffbc37;border:2px solid #ffbc37;">Clear Cart</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="summary">
+                    <h3>Order Summary</h3>
+
+                    <!-- Preview produs din URL -->
+                    <div id="preview_area" class="preview" style="display:none;">
+                        <div class="title" id="preview_name"></div>
+                        <div class="price" id="preview_price"></div>
+                        <button id="btn_add" class="small_btn">Add to cart</button>
+                    </div>
+
+                    <!-- Lista produse in cart -->
+                    <ul id="cart_list"></ul>
+                    <div class="total_row" id="total_price">Total: 0$</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+<script>
+// convert string to number
+function parsePrice(raw){
+    if(!raw) return 0;
+    raw = String(raw).trim().replace(/[^\d.,-]/g,'').replace(',','.');
+    const n = parseFloat(raw);
+    return isNaN(n)?0:n;
+}
+
+// load from localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Render cart function
+function renderCart(){
+    const list = document.getElementById('cart_list');
+    list.innerHTML='';
+    let total=0;
+
+    if(cart.length===0){
+        list.innerHTML='<li></li>'; // cart gol
+    } else {
+        cart.forEach((item,idx)=>{
+            const li=document.createElement('li');
+            const left=document.createElement('span');
+            left.textContent=`${item.product} — ${item.price.toFixed(2)}$`;
+
+            const removeBtn=document.createElement('button');
+            removeBtn.textContent='Remove';
+            removeBtn.className='remove-btn';
+            removeBtn.onclick=()=>{
+                cart.splice(idx,1); // sterge produs
+                localStorage.setItem('cart',JSON.stringify(cart)); // update localStorage
+                renderCart(); // rerender
+            };
+
+            li.appendChild(left);
+            li.appendChild(removeBtn);
+            list.appendChild(li);
+
+            total+=Number(item.price)||0;
+        });
+    }
+    document.getElementById('total_price').textContent='Total: '+total.toFixed(2)+'$';
+}
+
+renderCart(); // initial
+
+// Clear cart button
+document.getElementById('clear_cart').addEventListener('click',()=>{
+    if(confirm('Are you sure you want to clear the cart?')){
+        cart=[];
+        localStorage.removeItem('cart');
+        renderCart();
+    }
+});
+
+// Show product preview if URL has parameters
+const params = new URLSearchParams(window.location.search);
+const productParam = params.get('product');
+const priceParam = params.get('price');
+
+const previewArea = document.getElementById('preview_area');
+const previewName = document.getElementById('preview_name');
+const previewPrice = document.getElementById('preview_price');
+const btnAdd = document.getElementById('btn_add');
+
+if(productParam){
+    previewArea.style.display='block';
+    previewName.textContent=productParam;
+    const priceVal=parsePrice(priceParam);
+    previewPrice.textContent='Price: '+priceVal.toFixed(2)+'$';
+
+    btnAdd.onclick = () => {
+        cart.push({product: productParam, price: priceVal});
+        localStorage.setItem('cart',JSON.stringify(cart));
+        renderCart();
+        previewArea.style.display='none';
+        if(history.replaceState){
+            history.replaceState(null,'',window.location.pathname);
+        }
+    };
+}
+
+// Submit form
+document.querySelector('.billing_form').addEventListener('submit', e=>{
+    e.preventDefault();
+    if(cart.length===0){ alert('Your cart is empty!'); return; }
+
+    const names=cart.map(i=>i.product).join(', ');
+    alert('Thank you for purchasing: '+names+'\nTotal: '+document.getElementById('total_price').textContent.replace('Total: ',''));
+    cart=[];
+    localStorage.removeItem('cart');
+    renderCart();
+});
+</script>
+
+</body>
+</html>

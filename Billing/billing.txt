@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Factura Arme — Tanto & Katana</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: url('samurai.jpg') center/cover no-repeat fixed;
+    color: #222;
+  }
+
+  .overlay {
+    background-color: rgba(255,255,255,0.9);
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .invoice {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  }
+
+  h1 { text-align: center; margin-top: 0; color: #111; }
+  .row { display: flex; justify-content: space-between; flex-wrap: wrap; }
+  .col { width: 48%; margin-top: 10px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+  th { background: #f0f2f6; }
+  tfoot td { font-weight: bold; }
+  .right { text-align: right; }
+
+  .btn, .btn-add {
+    margin-top: 10px;
+    background: #0b6efd;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .btn:hover, .btn-add:hover { background: #0947c1; }
+
+  .btn-delete { background: #dc3545; }
+  .btn-delete:hover { background: #a71d2a; }
+
+  input[type=number], input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  input[readonly] {
+    background: #f9f9f9;
+    border: none;
+    color: #444;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .overlay { background: none; }
+    .btn, .btn-add, .btn-delete { display: none; }
+    .invoice { box-shadow: none; margin: 0; border: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay">
+  <div class="invoice">
+    <h1>Factura / Billing — Tanto & Katana</h1>
+
+    <div class="row">
+      <div class="col">
+        <h3>Furnizor / Seller</h3>
+        <p>
+          <strong><input type="text" value="Samurai Blades SRL" style="width:100%;" readonly></strong><br>
+          <input type="text" value="Str. Shogun 10, București" style="width:100%;" readonly><br>
+          CUI: <input type="text" value="RO12345678" readonly><br>
+          IBAN: <input type="text" value="RO49AAAA1B31007593840000" style="width:100%;" readonly><br>
+          Banca: <input type="text" value="Ronin Bank" style="width:100%;" readonly>
+        </p>
+      </div>
+      <div class="col">
+        <h3>Client / Buyer</h3>
+        <p>
+          <strong><input type="text" placeholder="Nume client" style="width:100%;"></strong><br>
+          <input type="text" placeholder="Adresă client" style="width:100%;"><br>
+          CUI: <input type="text" placeholder="RO...">
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:15px;">
+      <div>Nr. factură: <input type="text" value="#2025-ARM-007" readonly></div>
+      <div>Data: <input type="date" value="2025-11-04"></div>
+    </div>
+
+    <table id="invoiceTable">
+      <thead>
+        <tr>
+          <th>Produs / Product</th>
+          <th>Cant.</th>
+          <th>Preț unitar (RON)</th>
+          <th>TVA (%)</th>
+          <th>Total (RON)</th>
+          <th>Acțiune</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se va completa automat -->
+      </tbody>
+      <tfoot>
+        <tr><td colspan="4" class="right">Subtotal</td><td id="subtotal" class="right">0.00</td><td></td></tr>
+        <tr><td colspan="4" class="right">TVA</td><td id="tva" class="right">0.00</td><td></td></tr>
+        <tr><td colspan="4" class="right">Total de plată</td><td id="total" class="right">0.00</td><td></td></tr>
+      </tfoot>
+    </table>
+
+    <p>
+      <strong>Metodă de plată:</strong>
+      <input type="text" value="Transfer bancar în termen de 5 zile lucrătoare." style="width:100%;" readonly><br>
+      <strong>Livrare:</strong>
+      <input type="text" value="Curier rapid — termen estimat: 2 zile." style="width:100%;" readonly><br>
+      <strong>Notă:</strong>
+      <input type="text" value="Produsele sunt replici decorative, fără lamă ascuțită." style="width:100%;" readonly>
+    </p>
+
+    <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+</div>
+
+<script>
+function recalculate() {
+  let table = document.getElementById('invoiceTable').getElementsByTagName('tbody')[0];
+  let subtotal = 0;
+  let totalTVA = 0;
+
+  for (let row of table.rows) {
+    let qty = parseFloat(row.cells[1].children[0].value) || 0;
+    let price = parseFloat(row.cells[2].children[0].value) || 0;
+    let tax = parseFloat(row.cells[3].children[0].value) || 0;
+
+    let lineSubtotal = qty * price;
+    let lineTVA = lineSubtotal * (tax / 100);
+    let lineTotal = lineSubtotal + lineTVA;
+
+    subtotal += lineSubtotal;
+    totalTVA += lineTVA;
+
+    row.cells[4].children[0].value = lineTotal.toFixed(2);
+  }
+
+  document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+  document.getElementById('tva').innerText = totalTVA.toFixed(2);
+  document.getElementById('total').innerText = (subtotal + totalTVA).toFixed(2);
+}
+
+function deleteRow(btn) {
+  let row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+  recalculate();
+}
+
+window.onload = function() {
+  const params = new URLSearchParams(window.location.search);
+  const product = params.get("product");
+  const price = parseFloat(params.get("price"));
+
+  let tbody = document.querySelector("#invoiceTable tbody");
+
+  if (product && price) {
+    tbody.innerHTML = `
+      <tr>
+        <td><input type="text" value="${product}" readonly></td>
+        <td><input type="number" value="1" min="1" onchange="recalculate()"></td>
+        <td><input type="number" value="${price}" readonly></td>
+        <td><input type="number" value="19" readonly></td>
+        <td class="right"><input type="number" value="0.00" readonly></td>
+        <td><button class="btn-delete" onclick="deleteRow(this)">Șterge</button></td>
+      </tr>
+    `;
+  }
+
+  recalculate();
+};
+</script>
+
+</body>
+</html>
