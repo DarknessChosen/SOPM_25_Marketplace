@@ -15,13 +15,8 @@ Un hub simplu și fun în care alegi rapid unul dintre trei jocuri făcute indiv
 * [Jocuri (sloturi)](#jocuri-sloturi)
 * [Instalare & rulare](#instalare--rulare)
 * [Calitate cod & testare](#calitate-cod--testare)
-* [Ghid: cum adaugi un joc](#ghid-cum-adaugi-un-joc)
-* [Persistență scoruri](#persistență-scoruri)
 * [Portare în React Native (Android)](#portare-în-react-native-android)
-* [Roadmap pe 2 săptămâni](#roadmap-pe-2-săptămâni)
 * [Contribuții & roluri](#contribuții--roluri)
-* [Task list](#task-list)
-* [Licență](#licență)
 
 ---
 
