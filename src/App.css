@@ -1,0 +1,226 @@
+/* === Global Shell === */
+
+.gh-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at top, #222a3d 0, transparent 55%),
+    radial-gradient(circle at bottom, #080b14 0, #05060b 55%);
+  color: #f5f7ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* === Home Layout === */
+
+.gh-home {
+  flex: 1;
+  padding: 40px 20px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === Hero (logo + text) === */
+
+.gh-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.gh-logo {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 0 16px rgba(6, 214, 160, 0.45));
+}
+
+.gh-hero-text {
+  text-align: left;
+  max-width: 420px;
+}
+
+/* AICI este titlul GAMEHUB, turcoaz */
+.gh-title {
+  margin: 0 0 8px;
+  font-size: 44px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #22d3ee;
+  text-shadow:
+    0 0 14px rgba(34, 211, 238, 0.8),
+    0 0 32px rgba(6, 214, 160, 0.4);
+}
+
+.gh-subtitle {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* === Games section === */
+
+.gh-games {
+  margin-top: 20px;
+}
+
+.gh-section-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+
+/* Grid de carduri */
+
+.gh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 coloane fixe */
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .gh-grid {
+    grid-template-columns: 1fr;      /* pe telefoane: 1 card pe rând */
+  }
+}
+
+
+/* Card general */
+
+.gh-card {
+  position: relative;
+  background: rgba(6, 11, 25, 0.9);
+  border-radius: 18px;
+  padding: 14px 14px 18px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(17, 138, 178, 0.4);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.gh-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  border-color: #06d6a0;
+  background: radial-gradient(circle at top, rgba(6,214,160,0.16), rgba(6,11,25,0.95));
+}
+
+/* Card locked (pentru jocurile colegilor încă nelivrate) */
+
+.gh-card--locked {
+  opacity: 0.8;
+}
+
+/* TAG-ul de status */
+.gh-card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;            /* tag-ul vine deasupra thumbnail-ului */
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(6, 214, 160, 0.16);
+  border: 1px solid rgba(6, 214, 160, 0.8);
+}
+
+/* varianta pentru jocurile "Soon" */
+.gh-card-tag--soon {
+  background: rgba(148, 163, 184, 0.2);
+  border-color: rgba(148, 163, 184, 0.9);
+}
+
+/* Thumbnail (preview) */
+.gh-card-thumb {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;            /* imaginea stă în spate */
+}
+
+/* Pot schimba imaginile după ce sunt gata jocurile */
+.gh-card-thumb--adc {
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.25)),
+    url("./games/guess_adc/bg-adc.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.gh-card-thumb--x {
+  background-image: linear-gradient(135deg, #a855f7 0%, #ec4899 40%, #0b1324 100%);
+}
+
+.gh-card-thumb--y {
+  background-image: linear-gradient(135deg, #facc15 0%, #f97316 40%, #0b1324 100%);
+}
+
+/* Text în card */
+
+.gh-card-title {
+  margin: 4px 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.gh-card-desc {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* 404 */
+
+.gh-notfound {
+  padding: 40px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Footer */
+
+.gh-footer {
+  border-top: 1px solid rgba(15, 23, 42, 0.8);
+  padding: 16px 0 20px;
+  font-size: 13px;
+  color: #9ca3af;
+  background: #020617;
+  display: flex;
+  justify-content: center;  /* center pe orizontală */
+}
+
+.gh-footer-inner {
+  text-align: center;       /* text centrat în container */
+  padding: 0 20px;
+}
+
+/* Responsivitate */
+
+@media (max-width: 768px) {
+  .gh-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gh-hero-text {
+    text-align: center;
+  }
+
+  .gh-footer-inner {
+    text-align: center;
+  }
+}
